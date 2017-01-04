@@ -11,3 +11,7 @@
 *.bbg
 *.root
 *.pyc
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
