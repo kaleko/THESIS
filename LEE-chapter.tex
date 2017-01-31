@@ -113,7 +113,7 @@ A preliminary attempt to scale the MiniBooNE backgrounds and excess to the Micro
 \caption{\textit{A preliminary attempt to scale the MiniBooNE backgrounds and excess to the MicroBooNE both under the assumption that the excess is due to an electron-like event (left) or under a photon-like event (right). Stacked histograms show the expected background. Error bars indicate statistical uncertainty. The number of signal events, scaled from MiniBooNE for neutrino flux and fiducial volume, is the same in both plots. Both plots assume $6.6 \times 10^20$ POT for the MicroBooNE 60 ton fiducial mass.}}\label{TDR_LEE_scaling_fig}
 \end{figure}
 
-While the aforementioned scaling of MiniBooNE backgrounds to MicroBooNE provides a reasonable estimate of the expected sensitivity to the MiniBooNE low energy excess, it is oversimplified for the reasons mentioned. The next sections in this thesis describe a more rigorous analysis with the ultimate goal of computing MicroBooNE's sensitivity to the MiniBooNE low energy excess assuming the single-electron hypothesis.
+While the aforementioned scaling of MiniBooNE backgrounds to MicroBooNE provides a reasonable estimate of the expected sensitivity to the MiniBooNE low energy excess, it is oversimplified for the reasons mentioned. The next sections in this thesis describe a more rigorous analysis with the ultimate goal of computing MicroBooNE's sensitivity to the MiniBooNE low energy excess assuming the single-electron hypothesis. In this analysis, signal and background events will be simulated in the MicroBooNE detector and event selection cuts and algorithms will be used to select the events
 
 
 
@@ -131,20 +131,167 @@ While the aforementioned scaling of MiniBooNE backgrounds to MicroBooNE provides
 \section{Monte Carlo Simulation}
 
 \subsection{Simulated Background Samples}
-Mention that the input samples to this study are simulated BNB interactions inside of the entire cryostat, simulated cosmic samples, simulated intrinsic nue samples. Mention the stats are low because simulation is computationally intensive. Mention that GENIE is the generator. Mention the same flux reweighting is done as in MiniBooNE (and the same flux simulation is used as described in the beam chapter).
+In this analysis, both beam induced backgrounds and beam external backgrounds are simulated in the MicroBooNE cryostat. For beam-induced samples, the same flux predictions are used as were used in the MiniBooNE simulations (accounting for baseline and acceptance differences). The beam-induced samples come from full simulated BNB interactions with cross sections provided by GENIE (XXX citation). Beam-external samples (cosmics) come from simulated CORSIKA generated (XXX citation) cosmic rays that pass through the cryostat. Cosmic rays passing through other portions of the detector hall but not the cryostat result in negligible backgrounds in this $\nu_e$ search. The passage of all particles through the detector volume is simulated by the {\sc GEANT4} package (XXX citation).
 
 \subsection{Reconstruction}
-Currently the automated reconstruction in MicroBooNE is not adequate to do any sort of sensitivity study (specifically shower reconstruction). Discussion that the input objects into this sensitivity are showers and tracks, description of what they are and how they differ. 
+Ideally this analysis would be done on fully automated reconstructed objects. Such objects would be created from only the output wire and PMT signals from the detector. In this way, the same reconstruction methods could be used on data as are used in simulation. Unfortunately, at the time this thesis was written, the automated reconstruction in MicroBooNE is not adequate to do any sort of sensitivity study.\\
+
+In general, the output of an automated reconstruction chain in a LArTPC consists of reconstructed optical hits which come from the PMT signals, and reconstructed wire hits which come from drift electron ionization signals on the induction and collection plane wires. Reconstruction algorithms cluster the latter hits on each wire plane into those corresponding ot individual particles, then match clusters from different wire planes to form 3D reconstructed objects. The wire planes provide two of the three dimensions, and matching clusters to optical hits on the PMTs provide the third (drift) dimension. These reconstructed objects are either thin, straight tracks (which come from particles like muons, charged pions, and protons) or more fuzzy showers, which come from higher energy electrons or photons. While automatic track reconstruction can currently be performed at an adequate level, the difficulties involved in shower reconstruction (which is particularly important to tag and study $\nu_e$CC events) have yet to be overcome.\\
+
+For these reasons, this simulation-only study is done with objects that are not automatically reconstructed from wire and PMT signals, but instead from truth-based energy depositions in the detector. In general, these objects represent what would be reconstructed from wire and PMT signals if the reconstruction algorithms performed perfectly. Therefore, this is referred to as ``perfect reconstruction'' and the details of it are discussed in the next section. 
+
 \subsubsection{``Perfect Reconstruction''}
-Description of what {\sc MCTracks} and {\sc MCShowers} are, how they're made, etc. Make it clear that they are the input to the event reconstruction algorithms. Also make it clear that this entire sensitivity study is done only with these objects; no real automated reconstruction is covered (which is why no results on data are shown).
+% Description of what {\sc MCTracks} and {\sc MCShowers} are, how they're made, etc. Make it clear that they are the input to the event reconstruction algorithms. Also make it clear that this entire sensitivity study is done only with these objects; no real automated reconstruction is covered (which is why no results on data are shown).
+While a simulation-only study using real automated reconstruction would be ideal, such a study using ``perfect reconstruction'' is incredibly valuable; it is a step forward from the aforementioned simple scaling study, and the event selection cuts and algoritihms designed in this study can be used out-of-the-box on automated reconstructed objects once they become available. Additionally, the ``perfect reconstruction'' can be tuned to more realistically represent what automated reconstruction might be capable of, for example by smearing the energy of objects or emulating realistic reconstruction efficiencies.\\
+
+As mentioned earlier, the final 3D reconstructed objects formed from wire plane signals and PMT signals are referred to as tracks or showers. Tracks are close to straight lines in three dimensions, while showers are fuzzier and generally cone-shaped in three dimensions. The ``perfect reconstruction'' analogs to tracks and showers are referred to as {\sc MCTracks} and {\sc MCShowers}. They are created from simulated {\sc GEANT4} 3D energy depositions in the detector volume. {\sc GEANT4} outputs 3D energy depositions in the detector, along with truth information about which parent particles deposited this energy. {\sc MCShowers} and {\sc MCTracks} are 3D objects which are formed by grouping energy depositions based on parent particles. Whether a particle in {\sc GEANT4} becomes an {\sc MCShower} or an {\sc MCTrack} is based on truth PDG (for example, electrons always form {\sc MCShower}s and muons always form {\sc MCTrack}s). Only the energy deposited by particles \textit{within the TPC} is used to form these ``perfect reconstructed'' objects, which is in line with them representing actual reconstructable quantities (no ionization outside of the TPC is reconstructable).\\
+
+To clarify, consider the following simulated interaction: a $\nu_e$ charged current interaction in which the final state particles are an electron, a charged pion, a neutral pion, and two protons. The charged pion travels until it stops, where it decays into a muon, which then travels and decays into an electron. The generated ``perfect reconstruction'' objects in the event will be four {\sc MCTracks} (for the electron exiting the interaction, the electron from the muon decay, and one for each photon originating from the neutral pion decay) and four {\sc MCTracks} (one for the charged pion, one for the muon, and one for each proton).\\
+
+{\sc MCTracks} consist of a series of ordered 3D trajectory points, each corresponding to an energy deposition in the detector. {\sc MCShowers} have the following attributes: 3D start point where the first energy from the parent particle is deposited, 3D direction which is computed by fitting a line in 3D to all of the deposited energy from the parent particle, and dE/dx computed from the energy depositions along the first few centimeters of the shower. These ``perfectly reconstructed'' tracks and showers ({\sc MCTracks} and {\sc MCShowers}) serve as the input to the event selection algorithms, just as automated reconstructed tracks and showers would be in real data.\\
 
 
 
-\section{Event Reconstruction}
-This section describes how we take reconstructed objects (tracks and showers) and identify nue interactions. Mention that the analysis framework has many algorithms that each serve a specific purpose. Briefly mention the algorithms by name and what they're intended to do. Include the flowchart figure from the APS technote listing all the algorithms and the order in which they are executed. The following sections will describe in more detail the important ones. 
+
+\section{Event Selection}
+This section describes the algorithms and cuts used to identify $\nu_e^{CCQE}$ interactions, given as input the ``perfect reconstructed'' {\sc MCTracks} and {\sc MCShowers} from simulated triggered events in MicroBooNE\footnote{Note that these cuts and algorithms could use automatically reconstructed tracks and showers, and therefore could be run both on simulation and data, if the quality of track and shower reconstruction was high enough.}. With these reconstructed objects in hand, a series of nine algoritihms are run, each with a specific goal in mind; they either identify background topologies in order to remove them, or they identify the signal topology. For example, one algorithm identifies {\sc MCShowers} which are likely delta rays originating from tracks. Once identified, these {\sc MCShowers} are no longer candidate $\nu_e^{CCQE}$ electrons. Another algorithm looks for pairs of showers that are likely from $\pi^0$ decays in order to remove them from the pool of candidate $\nu_e^{CCQE}$ electrons. Another algorithm looks for through-going tracks to tag them as cosmic, ensuring they will not be associated with a neutrino interaction. The two most important event selection algorithms for this analysis are named ``AlgoEMPart'' (which handles the electron/photon discrimination based on {\sc MCShower} deposited energy near its start point) and ``AlgoSingleE'' (which is the algorithm responsible for locating the $\nu_e^{CCQE}$ topology and associating all {\sc MCTracks} and {\sc MCShowers} together for eventual energy reconstruction and analysis). These two algorithms are discussed in detail in the following two subsections. The remaining seven event reconstruction algorithms are discussed in detail in the appendices of this thesis.
+
+% This section describes how we take reconstructed objects (tracks and showers) and identify nue interactions. Mention that the analysis framework has many algorithms that each serve a specific purpose. Briefly mention the algorithms by name and what they're intended to do. Include the flowchart figure from the APS technote listing all the algorithms and the order in which they are executed. The following sections will describe in more detail the important ones. 
 
 \subsection{Electron/Photon Separation Algorithm}
-This is the algorithm (AlgoEMPart) that uses the reconstructed dE/dx and conversion distance to form a likelihood that a shower is electron like or photon like. It's one of the most important and should be described in detail. Include some figures showing performance of this algorithm.
+% This is the algorithm (AlgoEMPart) that uses the reconstructed dE/dx and conversion distance to form a likelihood that a shower is electron like or photon like. It's one of the most important and should be described in detail. Include some figures showing performance of this algorithm.
+The way electron/photon separation based on dE/dx at the start of showers is with an algorithm called ``AlgoEMPart". This algorithm uses trained likelihood distributions which input dE/dx and return the likelihood that the shower is electron-like, or photon-like. If a conversion distance is known, it will incorporate that into its likelihood as well. The likelihood is configured with parameters output by a RooFit minimization routine. The RooFit routine is trained on simulated single electron and single photon {\sc MCShowers}. In general, this algorithm computes both the likelihood that an {\sc MCShower} is an electron and that it is a photon, and determines the identity of the particle to be the one with the larger likelihood.\\
+
+There are two likelihood functions that may be used. If an {\sc MCShower} can independently be associated with a neutrino interaction vertex, AlgoEMPart will use a 2D likelihood function that includes both dE/dx and radiation length information. If an algorithm cannot associate a vertex with a shower, there is a 1D likelihood function that can be used with only dE/dx information. The 1D likelihood function is composed of a gaussian plus a landau distribution for dE/dx, and the 2D likelihood function also includes an exponential function for radiation length. Any potential energy dependence on dE/dx or conversion distance is not included in these likelihoods. The twelve trained input parameters include mean and sigma values for the gaussian distributions, the MPV and sigma values for the landau distributions, the fractional area difference between the gaussian and landau distributions, and the radiation length parameter (six parameters for electrons, six parameters for photons). When training, input parameters for each sample (electron, photon) are the {\sc MCShower} computed dE/dx as well as the truth-level creation vertex of the particle.
+
+\subsubsection{Performance}\label{empart_perfectreco_performance}
+The performance of this algorithm on ``perfect reconstruction" is computed by using samples of single electron showers and single photon showers generated isotropically between 0.05 and 2 GeV, and selecting those events where greater than 90\% of the shower's energy is contained within the TPC. The algorithm's likelihood is trained using this sample (integrated over the full energy range of the showers). 
+\begin{enumerate}
+\item Using \textit{only dE/dx} information, the efficiency (over all energies) to select a single electron is 93\%, while the MID efficiency to tag the electron as a photon is 7\%. 
+\item Using \textit{only dE/dx} information, the efficiency to select a single photon is 97.3\%, while the MID efficiency to tag the photon as an electron is 2.7\%.
+\item Using \textit{both dE/dx and radiation length} information (using the true creation point of photons), the efficiency to select a single electron is 99.7\%, while the MID efficiency to tag the electron as a photon is 0.3\%. 
+\item Using \textit{both dE/dx and radiation length} information (using the true creation point of photons), the efficiency to select a single photon is 98.1\%, while the MID efficiency to tag the photon as an electron is 1.9\%.
+\end{enumerate}
+
+
+The 1D likelihood to determine if a shower is electron-like or photon-like is shown in Figure \ref{empart_perfectreco_performance_fig4}. The likelihood that a shower with a given dE/dx is electron-like is computed by the ratio of the 1D electron-like PDF value for that dE/dx (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2}) to the sum of the electron-like PDF value for that dE/dx and the photon-like PDF value for that dE/dx (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2} as well) (Equation \ref{1D_dedx_likelihood_eqtn}). 
+
+\begin{equation}\label{1D_dedx_likelihood_eqtn}
+LL_e=\frac{e_{dE/dx}^{PDF}(\frac{dE}{dx})}{ e_{dE/dx}^{PDF}(\frac{dE}{dx}) + g_{dE/dx}^{PDF}(\frac{dE}{dx}) }
+\end{equation}
+where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2}) evaluated at a dE/dx value $\frac{dE}{dx}$ and $g_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the photon dE/dx PDF function (also shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2}) evaluated at a dE/dx value $\frac{dE}{dx}$. The likelihood that a shower with a given dE/dx is photon-like is similarly computed but with the photon-like PDF value for that dE/dx in the numerator.\\
+
+The 2D likelihood including both dE/dx and conversion distance is shown in Figure \ref{empart_perfectreco_performance_fig1}. The likelihood that a shower with a given dE/dx value, $\frac{dE}{dx}$ and a given conversion distance value, $d$ is electron-like is computed as follows: 
+\begin{equation}\label{2D_likelihood_eqtn}
+LL_e=log( \frac{e_{dE/dx}^{PDF}(\frac{dE}{dx}) * e_{conv}^{PDF}(d)}{g_{dE/dx}^{PDF}(\frac{dE}{dx}) * g_{conv}^{PDF}(d)} )
+\end{equation}
+where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2}) evaluated at a dE/dx value, $\frac{dE}{dx}$, $e_{conv}^{PDF}(d)$ represents the electron conversion distance PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig6}) evaluated at a conversion distance value, $d$, $g_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the photon dE/dx PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig3}) evaluated at a dE/dx value, $\frac{dE}{dx}$, $g_{conv}^{PDF}(d)$ represents the photon conversion distance PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig7}) evaluated at a conversion distance value, $d$. The likelihood that the same shower is photon-like is simply the inverse of Equation \ref{2D_likelihood_eqtn}.\\
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/dEdx_Selected_both.png}\\
+\caption{\textit{AlgoEMPart training results on perfect reconstructed electron showers and on perfect reconstructed photon showers as described in Section \ref{empart_perfectreco_performance}: 1D landau + gaussian fit to dE/dx.}}
+\label{empart_perfectreco_performance_fig2}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/dEdx_Selected_both_zoomed.png}\\
+\caption{\textit{The same plot as shown in Figure \ref{empart_perfectreco_performance_fig2}, but zoomed in along the y-axis to show the compton peak in the photon sample, as well as the pileup of very low dE/dx values for photons (due to soft compton scatters as described in Section \ref{perfectreco_section}).}}
+\label{empart_perfectreco_performance_fig3}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/Likelihood_dEdx.png}\\
+\caption{\textit{AlgoEMPart: Computed 1D likelihood vs dE/dx: red is photon, blue is electron. How the likelihood is computed is described in Section \ref{empart_perfectreco_performance}.}}
+\label{empart_perfectreco_performance_fig4}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/RadLength_Selected_e.png}\\
+\caption{\textit{AlgoEMPart training results on perfect reconstructed electron showers as described in Section \ref{empart_perfectreco_performance}: Radiation length fit to single electron showers. Note the poor quality of the fit as the electron conversion distance for ``perfect reconstruction'' does not follow an exponential distribution; all conversion distances are below 0.3 centimeters.}}
+\label{empart_perfectreco_performance_fig6}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/RadLength_Selected_g.png}\\
+\caption{\textit{AlgoEMPart training results on perfect reconstructed photon showers as described in Section \ref{empart_perfectreco_performance}: Radiation length fit to single photon showers.}}
+\label{empart_perfectreco_performance_fig7}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/Likelihood_radLen.png}\\
+\caption{\textit{AlgoEMPart: Computed 1D likelihood vs conversion distance (integrated over all energies): red is photon, blue is electron. How the likelihood is computed is described in Section \ref{empart_perfectreco_performance}.}}
+\label{empart_perfectreco_performance_fig5}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/2DRatio.png}\\
+\caption{\textit{AlgoEMPart training results on perfect reconstructed electron and photon showers as described in Section \ref{empart_perfectreco_performance} integrated over all energies: 2D likelihood distribution (radiation length vs. dE/dx). Low values of likelihood (purple) correspond to photon-like, high values (red) correspond to electron-like.}}
+\label{empart_perfectreco_performance_fig1}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Nue Selection Algorithm}
 This is the algorithm (AlgoSingleE) designed to look for the signal topology of CCInclusive... one electron plus anything else from the vertex. Mention the efficiency, etc.
