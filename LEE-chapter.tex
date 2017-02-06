@@ -151,7 +151,7 @@ To clarify, consider the following simulated interaction: a $\nu_e$ charged curr
 
 
 
-\section{Event Selection}
+\section{Event Selection}\label{LEE_eventselection_section}
 This section describes the algorithms and cuts used to identify $\nu_e^{CCQE}$ interactions, given as input the ``perfect reconstructed'' {\sc MCTracks} and {\sc MCShowers} from simulated triggered events in MicroBooNE\footnote{Note that these cuts and algorithms could use automatically reconstructed tracks and showers, and therefore could be run both on simulation and data, if the quality of track and shower reconstruction was high enough.}. With these reconstructed objects in hand, a series of nine algoritihms are run, each with a specific goal in mind; they either identify background topologies in order to remove them, or they identify the signal topology. For example, one algorithm identifies {\sc MCShowers} which are likely delta rays originating from tracks. Once identified, these {\sc MCShowers} are no longer candidate $\nu_e^{CCQE}$ electrons. Another algorithm looks for pairs of showers that are likely from $\pi^0$ decays in order to remove them from the pool of candidate $\nu_e^{CCQE}$ electrons. Another algorithm looks for through-going tracks to tag them as cosmic, ensuring they will not be associated with a neutrino interaction. The two most important event selection algorithms for this analysis are named ``AlgoEMPart'' (which handles the electron/photon discrimination based on {\sc MCShower} deposited energy near its start point) and ``AlgoSingleE'' (which is the algorithm responsible for locating the $\nu_e^{CCQE}$ topology and associating all {\sc MCTracks} and {\sc MCShowers} together for eventual energy reconstruction and analysis). These two algorithms are discussed in detail in the following two subsections. The remaining seven event reconstruction algorithms are discussed in detail in the appendices of this thesis.
 
 % This section describes how we take reconstructed objects (tracks and showers) and identify nue interactions. Mention that the analysis framework has many algorithms that each serve a specific purpose. Briefly mention the algorithms by name and what they're intended to do. Include the flowchart figure from the APS technote listing all the algorithms and the order in which they are executed. The following sections will describe in more detail the important ones. 
@@ -188,21 +188,21 @@ where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF functio
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/dEdx_Selected_both.png}\\
+\includegraphics[width=0.9\textwidth]{Figures/EMPartTraining/mc_trained/dEdx_Selected_both.png}\\
 \caption{\textit{AlgoEMPart training results on perfect reconstructed electron showers and on perfect reconstructed photon showers as described in Section \ref{empart_perfectreco_performance}: 1D landau + gaussian fit to dE/dx.}}
 \label{empart_perfectreco_performance_fig2}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/dEdx_Selected_both_zoomed.png}\\
+\includegraphics[width=0.9\textwidth]{Figures/EMPartTraining/mc_trained/dEdx_Selected_both_zoomed.png}\\
 \caption{\textit{The same plot as shown in Figure \ref{empart_perfectreco_performance_fig2}, but zoomed in along the y-axis to show the compton peak in the photon sample, as well as the pileup of very low dE/dx values for photons (due to soft compton scatters as described in Section \ref{perfectreco_section}).}}
 \label{empart_perfectreco_performance_fig3}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/Likelihood_dEdx.png}\\
+\includegraphics[width=0.9\textwidth]{Figures/EMPartTraining/mc_trained/Likelihood_dEdx.png}\\
 \caption{\textit{AlgoEMPart: Computed 1D likelihood vs dE/dx: red is photon, blue is electron. How the likelihood is computed is described in Section \ref{empart_perfectreco_performance}.}}
 \label{empart_perfectreco_performance_fig4}
 \end{figure}
@@ -210,14 +210,14 @@ where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF functio
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/RadLength_Selected_e.png}\\
+\includegraphics[width=0.9\textwidth]{Figures/EMPartTraining/mc_trained/RadLength_Selected_e.png}\\
 \caption{\textit{AlgoEMPart training results on perfect reconstructed electron showers as described in Section \ref{empart_perfectreco_performance}: Radiation length fit to single electron showers. Note the poor quality of the fit as the electron conversion distance for ``perfect reconstruction'' does not follow an exponential distribution; all conversion distances are below 0.3 centimeters.}}
 \label{empart_perfectreco_performance_fig6}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/RadLength_Selected_g.png}\\
+\includegraphics[width=0.9\textwidth]{Figures/EMPartTraining/mc_trained/RadLength_Selected_g.png}\\
 \caption{\textit{AlgoEMPart training results on perfect reconstructed photon showers as described in Section \ref{empart_perfectreco_performance}: Radiation length fit to single photon showers.}}
 \label{empart_perfectreco_performance_fig7}
 \end{figure}
@@ -225,14 +225,14 @@ where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF functio
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/Likelihood_radLen.png}\\
+\includegraphics[width=0.9\textwidth]{Figures/EMPartTraining/mc_trained/Likelihood_radLen.png}\\
 \caption{\textit{AlgoEMPart: Computed 1D likelihood vs conversion distance (integrated over all energies): red is photon, blue is electron. How the likelihood is computed is described in Section \ref{empart_perfectreco_performance}.}}
 \label{empart_perfectreco_performance_fig5}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{Figures/EMPartTraining/mc_trained/2DRatio.png}\\
+\includegraphics[width=0.9\textwidth]{Figures/EMPartTraining/mc_trained/2DRatio.png}\\
 \caption{\textit{AlgoEMPart training results on perfect reconstructed electron and photon showers as described in Section \ref{empart_perfectreco_performance} integrated over all energies: 2D likelihood distribution (radiation length vs. dE/dx). Low values of likelihood (purple) correspond to photon-like, high values (red) correspond to electron-like.}}
 \label{empart_perfectreco_performance_fig1}
 \end{figure}
@@ -345,7 +345,29 @@ The configurable parameters for this algorithm are summarized in the following t
 
 \subsubsection{Performance}
 
-XXX mention the efficiency to select signal, and the MID efficiencies to select backgrounds.
+The efficiency of this algorithm combined with all other algorithms used in the event selection chain (including cosmic rejection, etc) with ``perfect reconstruction'' inputs to select signal events and to select background events (``MID efficiency'') is summarized in Table \ref{eventselection_efficiency_table}. The numerator of this efficiency is the number of events tagged as $\nu_e$CCQE candidate interactions and the denominator is the true number of events with the specified interaction type. The second column in the table does not include the additional final analysis selection cuts which are placed on the reconstruction interactions in the efficiency numerator, and the third column does. These cuts are described in more detail in Section \ref{analysis_cut_descript_section}. The background categories are described in more detail in Section \ref{LEEbackgroundtopologiessection}. In the case of the cosmic background category, the denominator is the true number of events triggered by a cosmic arriving within the beam gate window that do not include a neutrino interaction.
+
+
+\begin{center}
+\begin{tabular}{ |p{4cm}|p{3cm}|p{6cm}|  }
+ \hline
+ \multicolumn{3}{|c|}{Event Selection Efficiencies} \\
+ \hline
+ True Event Type & Efficiency & Efficiency Including Analysis Cuts \\
+ \hline \hline
+ $\nu_e$CCQE & 0.8209 & 0.6142\\\hline
+ 
+ $\nu_\mu$CC & 0.0068 & 0.0002\\\hline
+
+ $\nu_x$NC & 0.0086 & 0.0013\\\hline
+
+ B.I.T.E. & 0.0107 & 0.0005 \\\hline
+
+ Cosmic & 0.0588 & 0.0012\\\hline
+
+ \hline
+\end{tabular}\label{eventselection_efficiency_table}
+\end{center}
 
 
 
@@ -376,32 +398,30 @@ XXX mention the efficiency to select signal, and the MID efficiencies to select 
 
 
 
-
-
-\subsection{Energy Reconstruction}
+\subsection{Energy Reconstruction}\label{LEE_EnergyReco_section}
 %Description of the energy definition. Mention that it is different than the CCQE energy definition MiniBooNE used. Include a figure of Ereco vs Etrue for the intrisic nue sample.
 
 With the candidate $\nu_e$CCQE interactions identified, the neutrino energy is reconstructed in two ways. First, the angle and energy of the selected $\nu_e$CCQE electron is used to compute an energy, $E_\nu^{CCQE}$ from the CCQE formula, Equation \ref{MB_CCQE_formula}. This is the same energy definition that is used in the MiniBooNE oscillation analysis.\\
 
-An additional, more accurate energy estimation, $E_{\text{calo}}$ is calculated by looping over all particles tagged as descendants of the reconstructed $\nu_e$ and adding up their deposited energies. For $\nu_e$CCQE events, this amounts to adding the deposited energy of the electron shower, along with the deposited energies from all protons exiting the interaction vertex. Additionally the electron mass is added, though this changes the calculated energy negligibly. Plots describing the neutrino reconstruction performance for correctly identified $\nu_e$CCQE interactions can be seen in Figures \ref{energy_smear_plot_fig} and \ref{energy_res_plot_fig}. XXX NEED TO UPDATE THESE PLOTS FOR CCQE only eventsXXX. 
+An additional, more accurate energy estimation, $E_{\text{calo}}$ is calculated by looping over all particles tagged as descendants of the reconstructed $\nu_e$ and adding up their deposited energies. For $\nu_e$CCQE events, this amounts to adding the deposited energy of the electron shower, along with the deposited energies from all protons exiting the interaction vertex. Additionally the electron mass is added, though this changes the calculated energy negligibly. Plots describing the neutrino reconstruction performance for correctly identified $\nu_e$CCQE interactions can be seen in Figures \ref{energy_smear_plot_fig} and \ref{energy_res_plot_fig}. The energy resolution for true neutrino energies below 500 MeV is on the order of 15\%, and the bias indicates that the energy reconstruction method tends to underestimate true neutrino energy by about 25\%. Note that this bias is computed as the standard deviation of all events in a specific true energy bin rather than the width of a gaussian fit to the central distribution of events, so the bias is skewed down by outliers.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=10mm]{Figures/FILLER.png}\\%Figures/background_technical/nue/energy_smear_plot.png}
-\caption{\textit{Reconstructed neutrino energy versus true neutrino energy for reconstructed $\nu_e$ events from a truly $\nu_e$CC ``reconstruction emulated'' sample (as described in detail in Section \ref{nue_technical_background_section}) after being run through the analysis algorithm chain with no additional analysis cuts. Note that a parallel band displaced by the pion mass from the diagonal is not seen. This band exists but is smeared for several reasons: the pion deposited energy is added, whether the decay muon's energy is correctedly associated to the parent pion track, edge effects where tracks and showers are not fully contained in the TPC, etc.}}
+\includegraphics[width=0.9\textwidth]{Figures/LEE_EnergySmear_WithAnalysisCuts.png}\\%Figures/background_technical/nue/energy_smear_plot.png}
+\caption{\textit{Reconstructed neutrino energy as described in Section \ref{LEE_EnergyReco_section} versus true neutrino energy. This plot was made from ``perfect reconstruction'' objects in correctly identified $\nu_e$CCQE events after all final analysis cuts were placed.}}
 \label{energy_smear_plot_fig}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=10mm]{Figures/FILLER.png}\\%Figures/background_technical/nue/energy_res_plot.png}
-\caption{\textit{A neutrino energy resolution plot. This is created by binning Figure \ref{energy_smear_plot_fig} in true neutrino energy and making a distribution of (Reco Energy - True Energy)/(True Energy). For each bin, the mean (red) and standard deviation (blue) are plotted in the above figure. This plot was made from ``reconstruction emulated'' objects in correctly identified $\nu_e$CC events.}}
+\includegraphics[width=0.9\textwidth]{Figures/LEE_EnergyRes_WithAnalysisCuts.png}\\%Figures/background_technical/nue/energy_res_plot.png}
+\caption{\textit{A neutrino energy resolution and bias plot. This is created by binning Figure \ref{energy_smear_plot_fig} in true neutrino energy and making a distribution of (Reco Energy - True Energy)/(True Energy). For each bin, the mean (red) and standard deviation (blue) are plotted in the above figure. This plot was made from ``perfect reconstruction'' objects in correctly identified $\nu_e$CCQE events after all final analysis cuts were placed.}}
 \label{energy_res_plot_fig}
 \end{figure}
 
 \section{Backgrounds}
 
-\subsection{Background Topologies}
+\subsection{Background Topologies}\label{LEEbackgroundtopologiessection}
 
 \subsubsection{Intrinsic $\nu_e$}
 The intrinsic $\nu_e^{CCQE}$ background comes from $\nu_e^{CCQE}$ interactions from Booster Neutrino Beam (BNB) electron neutrinos. The topology of these events involve one electron in the final state, with any number of protons exiting the interaction vertex, but no pions or muons exiting the interaction vertex. Neutral particles included in hadronic activity are also ignored as they are invisible from the point of view of a LArTPC. This background is irreducible for a $\nu_e^{CCQE}$ appearance search, and is one of the dominiant backgrounds in this analysis. These intrinsic $\nu_e$s in the relevant low energy region are mostly from muon decay in the beam line. The flux uncertainty can be constrained by a parallel $\nu_\mu$ analysis, as was done in MiniBooNE. While constraining $\nu_e$ from muon decay in the beam line with a parallel $\nu_\mu$ analysis, constraining $\nu_e$ from kaon decay in the beam line is discussed in the next chapter of this thesis.
@@ -453,10 +473,18 @@ The projected-backwards-distance-to-wall cut is computed by back-projecting the 
 
 XXX  Mention ``what are the possible uncertainties that could make a significant change in the assumed backgrounds.''
 
-XXX show plot of backgrounds with no signal on top! XXX describe for each background the impact of each analysis cut.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/LEE_stackedbackgrounds_nosignal_withAnalysisCuts.png}\\
+\caption{\textit{The backgrounds to the $\nu_e$CCQE appearance search in MicroBooNE. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}.}}
+\label{energy_res_plot_fig}
+\end{figure}
 
 
-\section{MiniBooNE Low Energy Excess Signal Modeling In MicroBooNE}
+
+
+
+\section{MiniBooNE Low Energy Excess Signal Modeling In MicroBooNE}\label{MBLEESignalModeling_section}
 % Here is where I describe how I come up with my scaled signal shape and normalization. Simulated sample are intrinsic nues, since I'm assuming the excess is coming from beam nues. Shape comes from MiniBooNE published data (excess events evis distribution and uz distribution along with the CCQE formula). Normalization comes from size of MiniBooNE excess with respect to size of MiniBooNE intrinsic nue background in a specific region (excess should be larger than the intrinsic nue background in the low CCQE-energy region... this was Bill's recent suggestion). This section will probably be several pages long.
 This section describes how the signal sample is generated for this sensitivity study, along with the necessary assumptions made in the process. First, the signal is assumed to originate from beam-induced $\nu_e$CCQE interactions (this is the electron-like hypothesis for the excess). No study for a photon-like excess is described in this thesis. The signal sample therefore consists of simulated intrinsic $\nu_e$CCQE interactions from the BNB generated uniformly throughout the MicroBooNE TPC. The energy and angle of these events are reweighted to match the published energy and angle distributions of the excess as observed by MiniBooNE. \\
 
@@ -507,10 +535,38 @@ While the shape of the simulated MicroBooNE signal events is determined by the a
 
 
 \subsection{Sensitivity Results}
-Here I show the stacked background with the scaled signal on top, I describe how I compute a sensitivity (statistical errors only for now... I could do a back-of-the-envelope estimate of systematic errors which are dominated by flux). ``Probably do need some estimates of systematic uncertainties. Also will you say anything about an electron LEE vs a photon LEE sensitivity''.
+
+Shown in Figure \ref{LEE_perfectreco_fullstack_fig} is the previously shown stacked backgrounds with the scaled MiniBooNe low energy excess signal included. Also labeled on the plot is the computed significance, including only statistical errors. The details on the computation of the significance is described in the next section.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/LEE_perfectreco_fullstack_WithAnalysisCuts.png}\\
+\caption{\textit{The backgrounds to the $\nu_e$CCQE appearance search in MicroBooNE with scaled signal drawn. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}. The scaled signal is described in Section \ref{MBLEESignalModeling_section}.}}
+\label{LEE_perfectreco_fullstack_fig}
+\end{figure}
+
+% Here I show the stacked background with the scaled signal on top, I describe how I compute a sensitivity (statistical errors only for now... I could do a back-of-the-envelope estimate of systematic errors which are dominated by flux). ``Probably do need some estimates of systematic uncertainties. Also will you say anything about an electron LEE vs a photon LEE sensitivity''.
+\subsubsection{Significance Calculation}
+For a given stacked background plot with a scaled signal on top, the statistical-only significance is can be computed as:
+\begin{equation}\label{chisquaresigeqtn}
+\sigma = \sqrt{\Delta \chi^2} = \sqrt{\vec{S}^TE^{-1}\vec{S}}
+\end{equation}
+where $\vec{S}$ is a vector containing the size of the signal, with length equal to the number of bins in the histogram, $n$, and $E$ is the $n\times n$ statistical-only covariance matrix (diagonal matrix with entries equal to the summed number of background events per bin).
+
 
 \subsubsection{Results with Realistic Shower Reconstruction Efficiency}
-Here I mention that the ``perfect reconstruction'' efficiency is 100\% but that isn't quite realistic. I'll state we assumed 80\%, and ICARUS quoted something similar. I'll describe how we emulate the non-perfect efficiency and how it isn't as simple as multiplying everything by 0.8 (for example we will get increased pi0 backgrounds when we fail to reconstruct just one of the showers).
+So far in this analysis, the shower reconstruction efficiency has been 100\% because the input objects are ``perfect reconstruction''. In order to emulate a more realistic potential shower reconstruction efficiency, an additional study has been done in which the shower reconstruction efficiency is modeled to be 85\% XXX icarus shower reco efficiency citation here. The resulting stacked background histogram with modeled signal is shown in Figure \ref{LEE_recoemu_fullstack_fig}. Note that in comparing Figure \ref{LEE_perfectreco_fullstack_fig} to Figure \ref{LEE_recoemu_fullstack_fig}, not all sample sizes are not simply reduced by 15\%. For example, the intrinsic NC backgrounds actually increase when the shower reconstruction efficiency is decreased. This is becase these backgrounds arise primarily from $\pi^0$ decays, and they are mitigated by event selection algorithms that locate both subsequent photon showers pointing back to a common origin and correlate them together. With reduced shower reconstruction efficiency, sometimes only one of the $\pi^0$ decay showers gets reconstructed and subsequently gets misidentified as a candidate $\nu_e$CC electron.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/LEE_recoemu_fullstack_WithAnalysisCuts.png}\\
+\caption{\textit{The backgrounds to the $\nu_e$CCQE appearance search in MicroBooNE with scaled signal drawn. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}. The scaled signal is described in Section \ref{MBLEESignalModeling_section}. Here the shower reconstrution efficiency has been decreased from the ``perfect reconstruction'' value of 100\% to 85\% to emulate possible realistic shower reconstruction efficiencies.}}
+\label{LEE_recoemu_fullstack_fig}
+\end{figure}
+
+\subsubsection{Systematic Error Estimates}
+XXX take kthe miniboonen flux and xsec uncertainties as back of the envelope and figure out how to add them into the chi2 calculation. present the final sigmas for perfect reco and recoemu in a table, including systematics.
 
 \subsubsection{Next Steps}
 Here I talk about how what's next is automated shower reconstruction being incorporated. Another important ingredient in the whole LEE analysis is constraining the nue backgrounds. The intrinsic nues which come from kaon decay can be constrained by studying numu interactions that come from kaon decay. This section will flow into the next chapter of the thesis: kaon production studies. ``Main nue background in LEE region is nue from muon decay, which is tied to the observed numu events. As you say, constaining nue from kaon decay can be constrained by the observation of the high energy numu rate, the topic of the next chapter.''
