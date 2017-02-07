@@ -536,7 +536,7 @@ While the shape of the simulated MicroBooNE signal events is determined by the a
 
 \subsection{Sensitivity Results}
 
-Shown in Figure \ref{LEE_perfectreco_fullstack_fig} is the previously shown stacked backgrounds with the scaled MiniBooNe low energy excess signal included. Also labeled on the plot is the computed significance, including only statistical errors. The details on the computation of the significance is described in the next section.
+Shown in Figure \ref{LEE_perfectreco_fullstack_fig} is the previously shown stacked backgrounds with the scaled MiniBooNe low energy excess signal included. Also labeled on the plot is the computed significance of 11.57$\sigma$, including only statistical errors. The details on the computation of the significance is described in the next section.
 
 \begin{figure}[ht!]
 \centering
@@ -555,7 +555,7 @@ where $\vec{S}$ is a vector containing the size of the signal, with length equal
 
 
 \subsubsection{Results with Realistic Shower Reconstruction Efficiency}
-So far in this analysis, the shower reconstruction efficiency has been 100\% because the input objects are ``perfect reconstruction''. In order to emulate a more realistic potential shower reconstruction efficiency, an additional study has been done in which the shower reconstruction efficiency is modeled to be 85\% XXX icarus shower reco efficiency citation here. The resulting stacked background histogram with modeled signal is shown in Figure \ref{LEE_recoemu_fullstack_fig}. Note that in comparing Figure \ref{LEE_perfectreco_fullstack_fig} to Figure \ref{LEE_recoemu_fullstack_fig}, not all sample sizes are not simply reduced by 15\%. For example, the intrinsic NC backgrounds actually increase when the shower reconstruction efficiency is decreased. This is becase these backgrounds arise primarily from $\pi^0$ decays, and they are mitigated by event selection algorithms that locate both subsequent photon showers pointing back to a common origin and correlate them together. With reduced shower reconstruction efficiency, sometimes only one of the $\pi^0$ decay showers gets reconstructed and subsequently gets misidentified as a candidate $\nu_e$CC electron.
+So far in this analysis, the shower reconstruction efficiency has been 100\% because the input objects are ``perfect reconstruction''. In order to emulate a more realistic potential shower reconstruction efficiency, an additional study has been done in which the shower reconstruction efficiency is modeled to be 85\% XXX icarus shower reco efficiency citation here. The resulting stacked background histogram with modeled signal is shown in Figure \ref{LEE_recoemu_fullstack_fig}. The computed significance when realistic shower reconstruction efficiencies are included in the analysis is 10.10$\sigma$.
 
 
 \begin{figure}[ht!]
@@ -565,8 +565,26 @@ So far in this analysis, the shower reconstruction efficiency has been 100\% bec
 \label{LEE_recoemu_fullstack_fig}
 \end{figure}
 
+Note that in comparing Figure \ref{LEE_perfectreco_fullstack_fig} to Figure \ref{LEE_recoemu_fullstack_fig}, not all sample sizes are not simply reduced by 15\%. For example, the intrinsic NC backgrounds actually increase when the shower reconstruction efficiency is decreased. This is becase these backgrounds arise primarily from $\pi^0$ decays, and they are mitigated by event selection algorithms that locate both subsequent photon showers pointing back to a common origin and correlate them together. With reduced shower reconstruction efficiency, sometimes only one of the $\pi^0$ decay showers gets reconstructed and subsequently gets misidentified as a candidate $\nu_e$CC electron.
+
 \subsubsection{Systematic Error Estimates}
-XXX take kthe miniboonen flux and xsec uncertainties as back of the envelope and figure out how to add them into the chi2 calculation. present the final sigmas for perfect reco and recoemu in a table, including systematics.
+
+In order to compute a realistic significance to the low energy excess in this analysis, a treatment of systematic uncertainties is necessary. While this is a detailed and important study, a conservative simplified estimation of these uncertainties is described here. Previous studies described in the proposal for the Short Baseline Neutrino experiment (which includes MicroBooNE as one of three detectors) \cite{SBNproposal} quote the integrated $\nu_e$ and $\nu_\mu$ flux uncertainties to be on the order of 10 to 15\%. These studies also quote the cross section uncertainties to be on the order of 20\%. While many of these uncertainties are strongly correlated across bins, the most conservative approach is to simply include a flat, uncorrelated flux uncertainty of 15\% and a similarly flat, uncorrelated cross section uncertainty of 20\%. These uncertainties are applied to all beam-induced backgrounds in this analysis. The systematic uncertainties on the cosmic-induced backgrounds are not known, but given the relatively small size of these backgrounds in this analysis, even a systematic of 50\% would have small impact on the final computed significance, so this systematic is neglected. Additional uncertainties from sources including detector systematics are expected to be subdominant to the relatively large flux and cross-section systematics, and are threfore similarly neglected.\\
+
+In order to include the flux and cross-section systematics in the significance calculation, Equation \ref{chisquaresigeqtn} is modified. As quoted, $E$ is the $n\times n$ diagonal covariance matrix with entries equal to the summed number of background events per bin. To include the flux and cross-section systematics, $E$ is modified as
+\begin{equation}\label{LEE_emtx_systematics}
+E = E_{\text{stat}} + E_{\text{flux}} + E_{\text{xsec}}
+\end{equation}
+where $E_{\text{stat}}$ is the previous statistical-only covariance matrix, while $E_{\text{flux}}$ represents the assumed uncorrelated flux systematic and $E_{\text{xsec}}$ the assumed uncorrelated cross section systematic. $E_{\text{flux}}$ is diagonal with entries equal to the number of beam-induced (non-cosmic) background events in that bin times the fractional uncertainty, squared:
+\begin{equation}\label{LEE_flux_emtx}
+E_{\text{flux}}^{i,i} = (N_{\text{beam-induced}}^i*0.15)^2
+\end{equation}
+and $E_{\text{xsec}}$ is similarly diagonal:
+\begin{equation}\label{LEE_xsec_emtx}
+E_{\text{xsec}}^{i,i} = (N_{\text{beam-induced}}^i*0.20)^2
+\end{equation}
+
+With these conservative systematic uncertainties included in the significance calculation, with realistic shower reconstruction efficiencies included the significance is reduced from 10.10$\sigma$ (statistical only) to 6.52$\sigma$ (including conservative systematics).
 
 \subsubsection{Next Steps}
 Here I talk about how what's next is automated shower reconstruction being incorporated. Another important ingredient in the whole LEE analysis is constraining the nue backgrounds. The intrinsic nues which come from kaon decay can be constrained by studying numu interactions that come from kaon decay. This section will flow into the next chapter of the thesis: kaon production studies. ``Main nue background in LEE region is nue from muon decay, which is tied to the observed numu events. As you say, constaining nue from kaon decay can be constrained by the observation of the high energy numu rate, the topic of the next chapter.''
