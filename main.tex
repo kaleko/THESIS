@@ -8,7 +8,7 @@
 \input{header}
 
 \usepackage{lineno} %temporary include line numbers
-
+\usepackage{pdfpages}
 \begin{document}
 
 \linenumbers %temporary include line numbers
@@ -86,23 +86,23 @@ Dedication text
 
 \chapter{Introduction}
 \label{section:intro}
-\input{intro}
+% \input{intro}
 
 \chapter{Neutrinos, Neutrino Oscillations, and Sterile Neutrinos}
 \label{sec:theory}
-\input{theory-chapter}
+% \input{theory-chapter}
 
 \chapter{The MicroBooNE Detector}
 \label{sec:detector}
-\input{detector-chapter}
+% \input{detector-chapter}
 
 \chapter{The Booster Neutrino Beam}
 \label{sec:beam}
-\input{beam-chapter}
+% \input{beam-chapter}
 
 \chapter{Low Energy Excess Sensitivity Studies}
 \label{sec:LEEsensitivity}
-\input{LEE-chapter}
+% \input{LEE-chapter}
 
 \chapter{Studies of Kaons Produced at the Proton Target}
 \label{sec:kaon}
@@ -110,26 +110,27 @@ Dedication text
 
 \chapter{Multiple Coulomb Scattering}
 \label{sec:MCS}
-\input{MCS-chapter}
+% \input{MCS-chapter}
 
 \chapter{Conclusions}
 \label{sec:conclusions}
-\input{conclusions}
+% \input{conclusions}
 
 %%%
 %%% Appendices
 %%%
-\part{Appendices}
-\appendix
-\input{appendix-MiniBooNE}
-\input{appendix-PerfectReco}
+% \part{Appendices}
+% \appendix
+% \input{appendix-MiniBooNE}
+% \input{appendix-PerfectReco} %this is empty, probably won't end up making it an appendix
 
 %%%
 %%% Bibliography
 %%%
 \part{Bibliography}
 \addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{unsrt} 
 \bibliography{refs}
-\bibliographystyle{named} 
+
 
 \end{document}
