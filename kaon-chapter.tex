@@ -42,15 +42,21 @@ For the $\nu_\mu$ in the beam, the breakdown of $\nu_\mu$ production parentage a
 \caption{\textit{The beam $\nu_\mu$ parentage as a function of true neutrino energy.}}\label{bnb_numu_breakdown_fig}
 \end{figure}
 
-In the initial MiniBooNE publications, the systematic uncertainty on the intrinsic $\nu_e$ from $K^+$ decay in the beam was 40\%. This systematic came from several sources in the beam simulation process including proton delivery/optics, secondary particle productions, hadronic interactions in the target or horn, and horn magnetic field. The uncertainty in pion production was determined from spline fits to external HARP pion double differential cross section data using the Sanford-Wang (SW) parametrization \cite{SanfordWangGary7} \cite{HARPgary8}. There was no published external data for $K^+$ production at the BNB primary proton beam energy of 8 GeV, so the Feynman scaling hypothesis was used to extrapolate $K^+$ production measurements to this energy \cite{FEYNMANgary6}. Following a measurement by the SciBooNE collaboration \cite{gary_kaon_production_paper}, this uncertainty was reduced to 14\%. Even with this drastic reduction, $K^+$ production is still the largest source of uncertainty for BNB $\nu_e$ above neutrino energies of around 0.6 GeV. The analysis described in the following sections aims to reproduce the SciBooNE measurement, but with the MicroBooNE detector. Reproducing this is important not only to further constrain this dominant systematic uncertainty for higher energy $\nu_e$ interactions, but also because MicroBooNE is has a different target material (argon) and different detector systematics. Additionally, the referenced analysis involved using the NUANCE neutrino interaction simulation library, whereas MicroBooNE uses a different package called GENIE.
+In the initial MiniBooNE publications, the systematic uncertainty on the intrinsic $\nu_e$ from $K^+$ decay in the beam was 40\%. This systematic came from several sources in the beam simulation process including proton delivery/optics, secondary particle productions, hadronic interactions in the target or horn, and horn magnetic field. The uncertainty in pion production was determined from spline fits to external HARP pion double differential cross section data using the Sanford-Wang (SW) parametrization \cite{SanfordWangGary7} \cite{HARPgary8}. There was no published external data for $K^+$ production at the BNB primary proton beam energy of 8 GeV, so the Feynman scaling hypothesis was used to extrapolate $K^+$ production measurements to this energy \cite{FEYNMANgary6}. Following a measurement by the SciBooNE collaboration \cite{gary_kaon_production_paper}, this uncertainty was reduced to 14\%. Even with this drastic reduction, $K^+$ production is still the largest source of uncertainty for BNB $\nu_e$ above neutrino energies of around 0.6 GeV. With the SciBooNE result incorporated into the estimation of flux systematics, the fractional error on the $\nu_\mu$ flux in MicroBooNE is shown in Figure \ref{UB_numu_fluxerr_fig}, and the fractional error on the $\nu_e$ flux (relevant for the low energy excess search) is shown in Figure \ref{UB_nue_fluxerr_fig}.\\
 
-%wrong figure, this is numu flux! best to just leave the figure out
-% \begin{figure}[ht!]
-% \centering
-% 	\includegraphics[width=0.9\textwidth]{Figures/UB_nue_fluxerror.png} \\
-% \caption{\textit{The fractional error for each neutrino species in the BNB at the MicroBooNE detector. Note the largest uncertainty at higher $\nu_\mu$ energies still comes from $K^+$ production, even including the SciBooNE measurement.}}\label{UB_nue_fluxerror_fig}
-% \end{figure}
+The analysis described in the following sections aims to reproduce the SciBooNE measurement, but with the MicroBooNE detector. Reproducing this is important not only to further constrain this dominant systematic uncertainty for higher energy $\nu_e$ interactions, but also because MicroBooNE is has a different target material (argon) and different detector systematics. Additionally, the referenced analysis involved using the NUANCE neutrino interaction simulation library, whereas MicroBooNE uses a different package called GENIE.
 
+\begin{figure}[ht!]
+\centering
+	\includegraphics[width=0.9\textwidth]{Figures/UB_numu_fluxerr.pdf} \\
+\caption{\textit{The fractional error for the BNB $\nu_\mu$ flux through MicroBooNE, broken up by systematic source. ``Other'' includes hadronic interactions, horn current uncertainty, skin depth effects, etc. The production uncertainties are divided by neutrino parent. Note the largest uncertainty at higher $\nu_\mu$ energies still comes from $K^+$ production, even including the SciBooNE measurement.}}\label{UB_numu_fluxerror_fig}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+	\includegraphics[width=0.9\textwidth]{Figures/UB_nue_fluxerr.pdf} \\
+\caption{\textit{The fractional error for the BNB $\nu_e$ flux through MicroBooNE, broken up by systematic source. ``Other'' includes hadronic interactions, horn current uncertainty, skin depth effects, etc. The production uncertainties are divided by neutrino parent. Note the largest uncertainty for $\nu_e$ above about 0.5 GeV neutrino energy still comes from $K^+$ production, even including the SciBooNE measurement.}}\label{UB_nue_fluxerror_fig}
+\end{figure}
 
 \section{Event Selection}
 The topologies of interest for this analysis are charge-current $\nu_\mu$ interactions in the MicroBooNE TPC. In such interactions, a $\nu_\mu$ interacts with a nucleon in an argon atom, exchanging a charged boson. Which particles exit the interaction depend on interaction channel and final state interactions, but in general these events have a muon in the final state. The relative probability of interaction type (quasi-elastic $QE$, resonant production $RES$, or deep inelastic scattering $DIS$) can be inferred from Figure \ref{bnb_xsec_breakdown_fig}. While most $\nu_\mu$ interactions in the dominant BNB energy region peaked at 0.7 GeV are quasi-elastic in nature, resonant production and deep inelastic scattering become more probable at higher neutrino energies.\\
@@ -277,17 +283,25 @@ The last low level data to simulation comparison is the computed multiple Coulom
 
 Despite extensive studies to uncover the underlying causes of the data to simulation disparities (for example the deficit of tracks at small $\theta$ angle in data and the systematic shift downward in multiple Coulomb scattering energy in data) either to fix them or calibrate them out without introducing new systematic errors, the differences remain. Since MicroBooNE is in part an R\&D experiment paving the way for future LArTPC experiments, understanding these differences are a problem that the MicroBooNE collaboration is still working to solve.\\
 
-The comparison of data to simulation in terms of reconstructed neutrino energy for the sideband region is shown in Figure \ref{kaon_stack_sideband_both}. Given the clear systematic shift in energy to lower values in data, any measurement coming from the signal region (which is a small tail at high energies) will have an extremely large systematic uncertainty associated with it. For completeness, the reconstructed energy in the signal region is shown in Figure \ref{kaon_stack_signal_both}. While the referenced SciBooNE result predicts the $K^+$ production rate in simulation is underestimated by a factor of $0.85\pm0.11$ \cite{gary_kaon_production_paper}, the underestimation of data with respect to simulation seen in this analysis is likely not indicative of incorrectly simulated kaon production in the beam-line, but instead due to systematic detector and reconstruction effects that have not yet been solved. %Including an 8\% normalization correction derived from integrating the sideband simulation with respect to data, with 10.8 measured data events in this region, 7.12 expected backgrounds, and 30.75 expected signal events, the kaon production in simulation appears to be underestimated by a factor of
-% \begin{equation}
-% K^+\text{ rate} = \frac{(10.8 \times 1.08) - 7.12}{30.75} = 0.148
-% \end{equation}
-
+The comparison of data to simulation in terms of reconstructed neutrino energy for the sideband region is shown in Figure \ref{kaon_stack_sideband_both}. Given the clear systematic shift in energy to lower values in data, any measurement coming from the signal region (which is a small tail at high energies) will have an extremely large systematic uncertainty associated with it. This figure is zoomed in on reconstructed neutrino energies between 1.5 GeV and 2.5 GeV in Figure \ref{kaon_stack_highsideband_both}. This is the region where the pion backgrounds start to become sub-dominant to the kaon signal. From this figure, it is clear that the deficit in data with respect to simulation isn't exclusively present for the kaon signal. This indicates that there are some systematic differences in the rate of pion- and kaon- produced neutrinos which may be related. \\
 
 \begin{figure}[ht!]
 \centering
 	\includegraphics[width=0.9\textwidth]{Figures/kaon_both_sideband.png} \\
 \caption{\textit{The distribution of reconstructed neutrino energy for simulated backgrounds and signal (solid histograms) overlaid with data measurements (``on-beam'' minus ``off-beam'' drawn in purple) for the sideband region in which reconstructed neutrino energy is less than 2.5 GeV. Statistical error bars are drawn on the data points, taking into account statistics from both the ``on-beam'' and ``off-beam'' samples. Below the main figure is a bin-by-bin ratio of data divided by simulation.}}\label{kaon_stack_sideband_both}
 \end{figure}
+
+\begin{figure}[ht!]
+\centering
+	\includegraphics[width=0.9\textwidth]{Figures/kaon_both_highsideband.png} \\
+\caption{\textit{The distribution of reconstructed neutrino energy for simulated backgrounds and signal (solid histograms) overlaid with data measurements (``on-beam'' minus ``off-beam'' drawn in purple) for the higher-energy end of the sideband region in which reconstructed neutrino energy is between 1.5 and 2.5 GeV. Statistical error bars are drawn on the data points, taking into account statistics from both the ``on-beam'' and ``off-beam'' samples. Below the main figure is a bin-by-bin ratio of data divided by simulation.}}\label{kaon_stack_highsideband_both}
+\end{figure}
+
+
+For completeness, the reconstructed energy in the signal region is shown in Figure \ref{kaon_stack_signal_both}. While the referenced SciBooNE result predicts the $K^+$ production rate in simulation is underestimated by a factor of $0.85\pm0.11$ \cite{gary_kaon_production_paper}, the underestimation of data with respect to simulation seen in this analysis is likely not indicative of incorrectly simulated kaon production in the beam-line, but instead due to systematic detector and reconstruction effects that have not yet been resolved. %Including an 8\% normalization correction derived from integrating the sideband simulation with respect to data, with 10.8 measured data events in this region, 7.12 expected backgrounds, and 30.75 expected signal events, the kaon production in simulation appears to be underestimated by a factor of
+% \begin{equation}
+% K^+\text{ rate} = \frac{(10.8 \times 1.08) - 7.12}{30.75} = 0.148
+% \end{equation}
 
 
 \begin{figure}[ht!]

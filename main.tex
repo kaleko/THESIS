@@ -19,7 +19,7 @@
 \thesistitlepage
 \thesiscopyrightpage
 
-\thesisabstract
+% \thesisabstract
 
 % In the "roman-numbered" section of the thesis, we have numbers at the bottom
 % and we have to reduce the textheight of the text to make space for the number
@@ -37,6 +37,9 @@
 \listoffigures
 \cleardoublepage
 
+\listoftables
+\cleardoublepage
+
 %%
 %% Acknowledgments
 %%
@@ -46,13 +49,13 @@
 %%
 %% Dedication page
 %%
-\thispagestyle{plain}
-\strut \vfill
-\centerline{\LARGE 
-Dedication text
-}
-\vfill \strut
-\cleardoublepage
+% \thispagestyle{plain}
+% \strut \vfill
+% \centerline{\LARGE 
+% Dedication text
+% }
+% \vfill \strut
+% \cleardoublepage
 
 %\draft   % Generates a draft version in single-space
 
@@ -86,42 +89,45 @@ Dedication text
 
 \chapter{Introduction}
 \label{section:intro}
-% \input{intro}
+\input{intro}
 
 \chapter{Neutrinos, Neutrino Oscillations, and Sterile Neutrinos}
 \label{sec:theory}
-% \input{theory-chapter}
+\input{theory-chapter}
 
 \chapter{The MicroBooNE Detector}
 \label{sec:detector}
-% \input{detector-chapter}
+\input{detector-chapter}
 
 \chapter{The Booster Neutrino Beam}
 \label{sec:beam}
 \input{beam-chapter}
 
-\chapter{Low Energy Excess Sensitivity Studies}
+\chapter{Low Energy Excess: LSND and MiniBooNE}
+\label{sec:LEEhistory}
+\input{LEE-history-chapter}
+
+\chapter{Low Energy Excess: MicroBooNE}
 \label{sec:LEEsensitivity}
-% \input{LEE-chapter}
+\input{LEE-UB-chapter}
 
 \chapter{Studies of Kaons Produced at the Proton Target}
 \label{sec:kaon}
-% \input{kaon-chapter}
+\input{kaon-chapter}
 
 \chapter{Multiple Coulomb Scattering}
 \label{sec:MCS}
-% \input{MCS-chapter}
+\input{MCS-chapter}
 
 \chapter{Conclusions}
 \label{sec:conclusions}
-% \input{conclusions}
+\input{conclusions}
 
 %%%
 %%% Appendices
 %%%
 % \part{Appendices}
 % \appendix
-% \input{appendix-MiniBooNE}
 % \input{appendix-PerfectReco} %this is empty, probably won't end up making it an appendix
 
 %%%
