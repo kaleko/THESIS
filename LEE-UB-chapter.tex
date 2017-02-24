@@ -1,11 +1,11 @@
-This chapter will describe the MicroBooNE sensitivity study to observe the same excess as observed by MiniBooNE, in the same neutrino beam-line but with a different detector technology.  The analysis to determine the sensitivity of the MicroBooNE detector to measure the same signal as MiniBooNE, with some assumptions about that signal (that the excess originates from an excess of beam-induced $\nu_e$ interactions) will be described. This discussion covers the signal modeling based on the MiniBooNE published data releases. The event selection and background mitigation techniques in MicroBooNE are described, and ultimately the expected sensitivity to measure such a signal is calculated.
+This chapter will describe the MicroBooNE sensitivity study to observe the same excess as observed by MiniBooNE, in the same neutrino beam-line but with a different detector technology. The description of the analysis covers the signal modeling based on the MiniBooNE published data releases, the event selection, and background mitigation techniques employed. Ultimately, the expected sensitivity to measure such a signal is calculated.
 
 \section{MicroBooNE In The Context of the Low Energy Excess}
 
 %http://microboone-docdb.fnal.gov:8080/cgi-bin/RetrieveFile?docid=3528&filename=low-E-excess-note.pdf&version=2
-Given the proposed explanations for the origin of the measured MiniBooNE low energy excess in neutrino mode all predict either a single electron or single photon produced at the neutrino interaction vertex, and that MiniBooNE cannot discriminate between single electrons or photons, the MicroBooNE experiment was proposed in 2007. This detector (described in detail in Section \ref{UBDetectorSection}) is a liquid argon time projection chamber, a relatively new detector technology which allows for the discrimination between single electrons and photons. MicroBooNE runs in the same beam line (BNB) in neutrino mode and is physically located close to MiniBooNE. Therefore, MicroBooNE should be able to elucidate the MiniBooNE low energy excess ambiguity, first by seeing if an excess exists and then determining if the excess is related to an excess of photon events or electron events.\\
+Given that the proposed explanations for the origin of the measured MiniBooNE low energy excess in neutrino mode all predict either a single electron or single photon produced at the neutrino interaction vertex, and that MiniBooNE cannot discriminate between single electrons or photons, the MicroBooNE experiment was proposed in 2007. This detector (described in detail in Chapter \ref{sec:detector}) is a liquid argon time projection chamber, a relatively new detector technology which allows for the discrimination between single electrons and photons. MicroBooNE runs in the same beam line (BNB) in neutrino mode and is physically located close to MiniBooNE. Therefore, MicroBooNE should be able to elucidate the MiniBooNE low energy excess ambiguity, first by seeing if an excess exists and then by determining if the excess is related to an excess of photon events or electron events.\\
 
-The electron/photon discrimination power of a LArTPC is based on the energy deposition at the start of electron and photon showers (photons will pair produce and in general have twice the ionization as a single electron). Shown in Figure \ref{UB_TDR_egammadedx_fig} is the energy loss per unit length along the first 2.4 cm of simulated single electron showers (red) and single photon showers (black) in terms of minimally ionizing particle (MIP) energy in liquid argon (about 2.1 MeV/cm). Leveraging the dE/dx difference between electrons and photons, and additionally the presence of a several centimeter (on average) gap between a photon's creation point and its pair production, MicroBooNE has very powerful electron/photon separation power whereas MiniBooNE has none.\\
+The electron/photon discrimination power of a LArTPC is based on the energy deposition at the start of electron and photon showers; photons will pair produce and in general have twice the ionization as a single electron. Shown in Figure \ref{UB_TDR_egammadedx_fig} is the energy loss per unit length along the first 2.4 cm of simulated single electron showers (red) and single photon showers (black) in terms of minimally ionizing particle (MIP) energy in liquid argon (about 2.1 MeV/cm). Leveraging the dE/dx difference between electrons and photons, and additionally the presence of a several centimeter (on average) gap between a photon's creation point and its pair production, MicroBooNE has very powerful electron/photon separation power whereas MiniBooNE has none.\\
 
 \begin{figure}[ht!]
 \centering
@@ -16,7 +16,7 @@ The electron/photon discrimination power of a LArTPC is based on the energy depo
 There are other important differences between the MiniBooNE detector and that of MicroBooNE which need to be considered when broaching the subject of estimating a sensitivity of a signal seen in MiniBooNE as it might be seen in MicroBooNE. These differences are summarized in Table \ref{UB_MB_comparison_table}. From the table it is clear that the event selection efficiency in MicroBooNE (not yet completely determined, but discussed in Section \ref{analysis_cut_descript_section}) will have to be much higher than that of MiniBooNE for two experiments to have comparable statistical significances. 
 
 \begin{table}
-\begin{tabular}{ |p{5cm}|p{3.5cm}|p{3.5cm}|  }
+\begin{tabular}{ |p{5 cm}|p{3.5 cm}|p{3.5 cm}|  }
  \hline
  \multicolumn{3}{|c|}{MiniBooNE Compared to MicroBooNE} \\
  \hline
@@ -39,16 +39,16 @@ There are other important differences between the MiniBooNE detector and that of
 
 \subsection{Past Sensitivity Studies}\label{georgia_scaling_description}
 
-A preliminary attempt to scale the MiniBooNE backgrounds and excess to MicroBooNE is shown in Figure \ref{TDR_LEE_scaling_fig}, both under the assumption that the excess is due to an electron-like event (left) or due to a photon-like event (right) \cite{UBTDR}. Such a scaling is a subtle and difficult task because of the drastic differences between the MiniBooNE and MicroBooNE detectors, as described in the previous section.\\
+The initial attempt to scale the MiniBooNE backgrounds and excess to MicroBooNE is shown in Figure \ref{TDR_LEE_scaling_fig}, both under the assumption that the excess is due to an electron-like event (left) or due to a photon-like event (right) \cite{UBTDR}. Performing such a scaling analysis is a subtle and difficult task because of the drastic differences between the MiniBooNE and MicroBooNE detectors, as described in the previous section.\\
 
 \begin{figure}[ht!]
 \centering
-	\includegraphics[width=0.9\textwidth]{Figures/TDR_LEE_scaling.png} \\
-\caption{\textit{A preliminary attempt to scale the MiniBooNE backgrounds and excess to MicroBooNE both under the assumption that the excess is due to an electron-like event (left) or under a photon-like event (right). Stacked histograms show the expected background. Error bars indicate statistical uncertainty. The number of signal events, scaled from MiniBooNE for neutrino flux and fiducial volume, is the same in both plots (though dedicate electron-specific and photon-specific event selection cuts may show this to be unrealistic). Both plots assume $6.6 \times 10^20$ POT for the MicroBooNE 60 ton fiducial mass.}}\label{TDR_LEE_scaling_fig}
+	\includegraphics[width=1.0\textwidth]{Figures/TDR_LEE_scaling.png} \\
+\caption{\textit{The results of the first analysis to scale the MiniBooNE backgrounds and excess to MicroBooNE both under the assumption that the excess is due to an electron-like event (left) or under a photon-like event (right). Stacked histograms show the expected background. Error bars indicate statistical uncertainty. The number of signal events, scaled from MiniBooNE for neutrino flux and fiducial volume, is the same in both plots (though dedicate electron-specific and photon-specific event selection cuts may show this to be unrealistic). Both plots assume $6.6 \times 10^20$ POT for the MicroBooNE 60 ton fiducial mass.}}\label{TDR_LEE_scaling_fig}
 \end{figure}
 
 
-This scaling assumes the electron/photon misidentification rate in MicroBooNE is 6\% (whereas it is 100\% for MiniBooNE). Also, event selection efficiencies in MicroBooNE are assumed to be exactly twice that of MiniBooNE because of the detector technology. This scaling procedure ignores other potentially important differences between MicroBooNE and MiniBooNE including differences in detector geometry (important for $\pi^0$ mis-identifications in which one photon escapes), flux differences (which are non-negligible despite the relative close physical proximity of the two detectors), event topology selection differences (MicroBooNE can see much more vertex activity than can MiniBooNE, especially when additional final state particles are below Cherenkov threshold), the differing cosmic rejection background efficiencies (MiniBooNE can reject cosmics more efficiently than MicroBooNE), cross section differences between argon and $CH_2$ arising from differing proton to neutron ratios, among other things. The analysis described later in this thesis will treat both of these assumptions with more rigor.\\
+This scaling assumes the electron/photon misidentification rate in MicroBooNE is 6\% (whereas it is 100\% for MiniBooNE). Also, event selection efficiencies in MicroBooNE are assumed to be exactly twice that of MiniBooNE because of the detector technology. This scaling procedure ignores other potentially important differences between MicroBooNE and MiniBooNE including differences in detector geometry (important for $\pi^0$ mis-identifications in which one photon escapes), flux differences (which are non-negligible despite the relative close physical proximity of the two detectors), event topology selection differences (MicroBooNE can see much more vertex activity than can MiniBooNE, especially when additional final state particles are below Cherenkov threshold), the differing cosmic rejection background efficiencies (MiniBooNE can reject cosmics more efficiently than MicroBooNE), cross section differences between argon and $CH_2$ arising from differing proton to neutron ratios, among other things.\\% The analysis described later in this thesis will treat these assumptions with more rigor.\\
 
 The resulting statistical significance from the aforementioned scaling after the nominal amount of data is taken in MicroBooNE ($6.6\times 10^{20}$ POT) is computed to be 5.7$\sigma$ under the single-electron excess hypothesis and 4.1$\sigma$ under the single-photon hypothesis. \\
 
@@ -73,15 +73,15 @@ The described scaling analysis is a very valuable tool, but making many assumpti
 In this thesis analysis, both beam induced backgrounds and beam external backgrounds are simulated in the MicroBooNE cryostat. For beam-induced samples, the same flux predictions are used as were used in the MiniBooNE simulations (accounting for baseline and acceptance differences). The beam-induced samples come from full simulated BNB interactions with cross sections provided by GENIE \cite{GENIEsource}\footnote{Note that while MicroBooNE uses GENIE to simulate BNB interactions, MiniBooNE used NUANCE \cite{NUANCEsource}. Given the approach to determine the absolute normalization of the MiniBooNE excess as seen in MicroBooNE based on intrinsic $\nu_e$ rates (see Section \ref{MBLEESignalModeling_section}), differences between these two generators can be ignored.}. Beam-external samples (cosmics) come from simulated CORSIKA generated \cite{CORSIKAsource} cosmic rays that pass through the cryostat. Cosmic rays passing through other portions of the detector hall but not the cryostat result in negligible backgrounds in this $\nu_e$ search. The passage of all particles through the detector volume is simulated by the {\sc GEANT4} package \cite{GEANT4source}. 
 
 \subsection{Reconstruction}
-In general, the output of an automated reconstruction chain in a LArTPC consists of reconstructed optical hits which come from the PMT signals, and reconstructed wire hits which come from drift electron ionization signals on the induction and collection plane wires. Reconstruction algorithms cluster the latter hits on each wire plane into those corresponding to individual particles, then match clusters from different wire planes to form 3D reconstructed objects. The wire planes provide two of the three dimensions, and matching clusters to optical hits on the PMTs provide the third (drift) dimension. These reconstructed objects are either thin, straight tracks (which come from particles like muons, charged pions, and protons) or more fuzzy cone-shaped showers, which come from higher energy electrons or photons. Ideally this analysis would be done using these reconstructed objects. In this way, the same event selection  methods could be used on data as are used in simulation. While automatic track reconstruction can currently be performed at an adequate level, the difficulties involved in shower reconstruction (which is particularly important to tag and study $\nu_e^{CC}$ events) have yet to be overcome.\\
+In general, the output of an automated reconstruction chain in a LArTPC consists of reconstructed optical hits which come from the PMT signals, and reconstructed wire hits which come from drift electron ionization signals on the induction and collection plane wires. Reconstruction algorithms cluster the electron ionization hits on each wire plane into those corresponding to individual particles, then match clusters from different wire planes to form 3D reconstructed objects. The wire planes provide two of the three dimensions, and matching clusters to optical hits on the PMTs provide the third (drift) dimension. These reconstructed objects are either thin, straight tracks (which come from particles like muons, charged pions, and protons) or more fuzzy cone-shaped showers, which come from higher energy electrons or photons. Ideally this analysis would be done using these reconstructed objects. In this way, the same event selection  methods could be used on data as are used in simulation. While automatic track reconstruction can currently be performed at an adequate level, the difficulties involved in shower reconstruction (which is particularly important to tag and study $\nu_e^{CC}$ events) have yet to be overcome by MicroBooNE and the LArTPC community.\\
 
-For these reasons, this simulation-only study is done with objects that are not automatically reconstructed from wire and PMT signals, but instead from truth-based energy depositions in the detector. In general, these objects represent what would be reconstructed from wire and PMT signals if the reconstruction algorithms performed perfectly. Therefore, this is referred to as ``perfect reconstruction'' and the details of it are discussed in the next section. 
+For these reasons, this simulation-only study is done with objects that are not automatically reconstructed from wire and PMT signals, but instead from truth-based energy depositions in the detector. In general, these objects represent what would be reconstructed from wire and PMT signals if the reconstruction algorithms performed perfectly. Therefore, this is referred to as ``perfect reconstruction'' and the details of these objects are discussed in the next section. 
 
 \subsubsection{``Perfect Reconstruction''}\label{perfectreco_section}
 % Description of what {\sc MCTracks} and {\sc MCShowers} are, how they're made, etc. Make it clear that they are the input to the event reconstruction algorithms. Also make it clear that this entire sensitivity study is done only with these objects; no real automated reconstruction is covered (which is why no results on data are shown).
-While a simulation-only study using real automated reconstruction would be ideal, such a study using ``perfect reconstruction'' is incredibly valuable; it is a step forward from the aforementioned simple scaling study (Section \ref{georgia_scaling_description}), and the event selection cuts and algorithms designed in this study can be used out-of-the-box on automated reconstructed objects once they become available. Additionally, the ``perfect reconstruction'' can be tuned to more realistically represent what automated reconstruction might be capable of, for example by smearing the energy of objects or emulating realistic reconstruction efficiencies. This will provide the important estimate of uncertainties arising from the imperfect automated reconstruction.\\
+While a simulation-only study using real automated reconstruction would be ideal, such a study using ``perfect reconstruction'' is incredibly valuable; it is a step forward from the aforementioned scaling study (Section \ref{georgia_scaling_description}), and the event selection cuts and algorithms designed in this study can be used out-of-the-box on automated reconstructed objects once they become available. Additionally, the ``perfect reconstruction'' can be tuned to more realistically represent what automated reconstruction might be capable of, for example by smearing the energy of objects or emulating realistic reconstruction efficiencies. This provides the important estimate of uncertainties arising from the imperfect automated reconstruction.\\
 
-As mentioned earlier, the final 3D reconstructed objects formed from wire plane signals and PMT signals are referred to as tracks or showers. Tracks are close to straight lines in three dimensions, while showers are fuzzier and generally cone-shaped in three dimensions. The ``perfect reconstruction'' analogs to tracks and showers are referred to as {\sc MCTracks} and {\sc MCShowers}. They are created from simulated {\sc GEANT4} 3D energy depositions in the detector volume. {\sc GEANT4} outputs 3D energy depositions in the detector, along with truth information about which parent particles deposited this energy. {\sc MCShowers} and {\sc MCTracks} are 3D objects which are formed by grouping energy depositions based on parent particles. Whether a particle in {\sc GEANT4} becomes an {\sc MCShower} or an {\sc MCTrack} is based on truth PDG (for example, electrons always form {\sc MCShower}s\footnote{Despite the fact that electrons behave more like tracks below the critical energy, which is on the order of 40 MeV in liquid argon} and muons always form {\sc MCTrack}s). Only the energy deposited by particles \textit{within the TPC} is used to form these ``perfect reconstructed'' objects, which is in line with them representing actual reconstructible quantities (no ionization outside of the TPC is reconstructible).\\
+As mentioned earlier, the final 3D reconstructed objects formed from wire plane signals and PMT signals are referred to as tracks or showers. Tracks are close to straight lines in three dimensions, while showers are fuzzier and generally cone-shaped in three dimensions. The ``perfect reconstruction'' analogs to tracks and showers are referred to as {\sc MCTracks} and {\sc MCShowers}. They are created from simulated {\sc GEANT4} 3D energy depositions in the detector volume. {\sc GEANT4} outputs 3D energy depositions in the detector, along with truth information about which parent particles deposited this energy. {\sc MCShowers} and {\sc MCTracks} are 3D objects which are formed by grouping energy depositions based on parent particles. Whether a particle in {\sc GEANT4} becomes an {\sc MCShower} or an {\sc MCTrack} is based on truth particle identity. For example, electrons always form {\sc MCShower}s\footnote{Despite the fact that electrons behave more like tracks below the critical energy, which is on the order of 40 MeV in liquid argon.} and muons always form {\sc MCTrack}s. Only the energy deposited by particles \textit{within the TPC} is used to form these ``perfect reconstructed'' objects, which is in line with them representing actual reconstructible quantities (no ionization outside of the TPC is reconstructible).\\
 
 % To clarify, consider the following simulated interaction: a $\nu_e$ charged current interaction in which the final state particles are an electron, a charged pion, a neutral pion, and two protons. The charged pion travels until it stops, where it decays into a muon, which then travels and decays into an electron. The generated ``perfect reconstruction'' objects in the event will be four {\sc MCShower}s (for the electron exiting the interaction, the electron from the muon decay, and one for each photon originating from the neutral pion decay) and four {\sc MCTracks} (one for the charged pion, one for the muon, and one for each proton).\\
 
@@ -93,9 +93,9 @@ As mentioned earlier, the final 3D reconstructed objects formed from wire plane 
 \section{Event Selection}\label{LEE_eventselection_section}
 This section describes the algorithms and cuts used to identify $\nu_e^{CC}$ interactions, given as input the ``perfect reconstructed'' {\sc MCTracks} and {\sc MCShowers} from simulated triggered events in MicroBooNE\footnote{Note that these cuts and algorithms could use automatically reconstructed tracks and showers, and therefore could be run both on simulation and data, if the quality of track and shower reconstruction was high enough.}. Note that while the event selection algorithms are designed to identify $\nu_e^{CC}$ inclusive interactions (which may involve pions in the final state, for example), ultimately only the $\nu_e^{CCQE}$ events (with only one electron and protons in the final state) are used in the final sensitivity estimates.\\
 
-To select $\nu_e^{CC}$ interactions in MicroBooNE, a series of nine algorithms are run, each with a specific goal in mind; they either identify background topologies in order to remove them, or they identify the signal $\nu_e^{CC}$ topology. For example, one algorithm identifies {\sc MCShowers} which are likely delta rays originating from tracks. Once identified, these {\sc MCShowers} are no longer candidate $\nu_e^{CCQE}$ electrons. Another algorithm identifies pairs of showers that are likely from $\pi^0$ decays (by using the dE/dx of those showers, and requiring they back-project to a common origin) in order to remove them from the pool of candidate $\nu_e^{CC}$ electrons. Another algorithm tags through-going tracks as cosmic in origin, ensuring they will not be associated with a neutrino interaction.\\
+To select $\nu_e^{CC}$ interactions in MicroBooNE, a series of nine algorithms are run, each with a specific goal in mind; they either identify background topologies in order to remove them, or they identify the signal $\nu_e^{CC}$ topology. For example, one algorithm identifies {\sc MCShowers} which are likely delta rays originating from tracks. Once identified, these {\sc MCShowers} are no longer candidate $\nu_e^{CCQE}$ electrons. Another algorithm identifies pairs of showers that are likely from $\pi^0$ decays (by using the dE/dx of those showers to identify them as photons, and requiring they back-project to a common origin) in order to remove them from the pool of candidate $\nu_e^{CC}$ electrons. Another algorithm tags through-going tracks as cosmic in origin, ensuring they will not be associated with a beam neutrino interaction.\\
 
-The two most important event selection algorithms for this analysis are named ``AlgoEMPart'' (which handles the electron/photon discrimination) and ``AlgoSingleE'' (which is the algorithm responsible for locating the $\nu_e^{CC}$ topology and associating all tracks and showers together for eventual energy reconstruction and analysis). These two algorithms are discussed in detail in the following two subsections. The remaining seven event reconstruction algorithms are discussed in detail in the appendices of this thesis (XXX will add this later). Note that at the end of the chain of event selection algorithms, a sample of candidate $\nu_e^{CC}$ events is tagged. These events are the subject to further cuts both to mitigate some backgrounds that the event selection algorithms missed, and more importantly to pick specifically $\nu_e^{CCQE}$ events so as to make the eventual comparison to the MiniBooNE excess, since MiniBooNE searched for $\nu_e^{CCQE}$ events, not $\nu_e^{CC}$.
+The two most important event selection algorithms for this analysis are named ``AlgoEMPart'' (which handles the electron/photon discrimination) and ``AlgoSingleE'' (which is the algorithm responsible for locating the $\nu_e^{CC}$ topology and associating all tracks and showers together for eventual energy reconstruction and analysis). These two algorithms are discussed in detail in the following two subsections. At the end of the chain of event selection algorithms, a sample of candidate $\nu_e^{CC}$ events is obtained. These events are the subject to further cuts both to mitigate some backgrounds that the event selection algorithms missed, and more importantly to pick specifically $\nu_e^{CCQE}$ events. This down-sampling is necessary to make the eventual comparison to the MiniBooNE excess, since MiniBooNE searched for $\nu_e^{CCQE}$ events, not $\nu_e^{CC}$.
 
 % This section describes how we take reconstructed objects (tracks and showers) and identify nue interactions. Mention that the analysis framework has many algorithms that each serve a specific purpose. Briefly mention the algorithms by name and what they're intended to do. Include the flowchart figure from the APS technote listing all the algorithms and the order in which they are executed. The following sections will describe in more detail the important ones. 
 
@@ -140,7 +140,7 @@ The 2D likelihood including both dE/dx and conversion distance is shown in Figur
 \begin{equation}\label{2D_likelihood_eqtn}
 LL_e=log( \frac{e_{dE/dx}^{PDF}(\frac{dE}{dx}) * e_{conv}^{PDF}(d)}{g_{dE/dx}^{PDF}(\frac{dE}{dx}) * g_{conv}^{PDF}(d)} )
 \end{equation}
-where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2}) evaluated at a dE/dx value, $\frac{dE}{dx}$, $e_{conv}^{PDF}(d)$ represents the electron conversion distance PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig6}) evaluated at a conversion distance value, $d$, $g_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the photon dE/dx PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig3}) evaluated at a dE/dx value, $\frac{dE}{dx}$, $g_{conv}^{PDF}(d)$ represents the photon conversion distance PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig7}) evaluated at a conversion distance value, $d$. The likelihood that the same shower is photon-like is simply the inverse of Equation \ref{2D_likelihood_eqtn}.\\
+where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2}) evaluated at a dE/dx value, $\frac{dE}{dx}$, $e_{conv}^{PDF}(d)$ represents the electron conversion distance PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig6}) evaluated at a conversion distance value, $d$, $g_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the photon dE/dx PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig2}) evaluated at a dE/dx value, $\frac{dE}{dx}$, $g_{conv}^{PDF}(d)$ represents the photon conversion distance PDF function (shown non-normalized in Figure \ref{empart_perfectreco_performance_fig7}) evaluated at a conversion distance value, $d$. The likelihood that the same shower is photon-like is simply the inverse of Equation \ref{2D_likelihood_eqtn}.\\
 
 
 
@@ -186,64 +186,15 @@ where $e_{dE/dx}^{PDF}(\frac{dE}{dx})$ represents the electron dE/dx PDF functio
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Signal Selection Algorithm}
 
-The purpose of this algorithm is to reconstruct events with $\nu_e^{CC}$ inclusive type topologies. These topologies involve a single electron at a neutrino interaction vertex, with any number of protons, charged or neutral pions, or anything else additionally exiting the vertex. Later on, the sample of selected events will be subjected to further cuts to select only $\nu_e^{CCQE}$ topologies by rejecting events with pions in the final state. This algorithm uses likelihoods provided by the previously described ``AlgoEMPart'' (Section \ref{algoempart_section}) to determine if a shower is an electron or a photon. This algorithm begins by looping over all candidate $\nu_e^{CC}$ electron showers in the event that have not been removed by upstream cosmic and $\pi^0$ tagging algorithms. Figure \ref{algosinglee_flowchart_fig} is a flowchart depicting decision tree this algorithm uses for each candidate $\nu_e^{CC}$ electron shower. If the algorithm reaches the bottom of the flowchart, that shower is determined to be from a $\nu_e^{CC}$ interaction and the event is saved to be included in analysis. The flowchart refers to determining if two showers are correlated and determining if a shower is correlated with the start of a track. A schematic which diagrams how these determinations are made is shown in Figure \ref{algosinglee_cartoon_fig}. A list of configurable parameters and their chosen cut values can be found in Table \ref{algosinglee_table}. A more detailed description of Figure \ref{algosinglee_flowchart_fig} is given in the following paragraphs.\\
+The purpose of this algorithm is to select events with $\nu_e^{CC}$ inclusive type topologies. These topologies involve a single electron at a neutrino interaction vertex, with any number of protons, charged or neutral pions, or anything else additionally exiting the vertex. Later on, the sample of selected events will be subjected to further cuts to select only $\nu_e^{CCQE}$ topologies by rejecting events with pions in the final state. This algorithm uses likelihoods provided by the previously described ``AlgoEMPart'' (Section \ref{algoempart_section}) to determine if a shower is an electron or a photon. This algorithm begins by looping over all candidate $\nu_e^{CC}$ electron showers in the event that have not been removed by upstream cosmic and $\pi^0$ tagging algorithms. Figure \ref{algosinglee_flowchart_fig} is a flowchart depicting the decision tree this algorithm uses for each candidate $\nu_e^{CC}$ electron shower. If the algorithm reaches the bottom of the flowchart, that shower is determined to be from a $\nu_e^{CC}$ interaction and the event is saved to be included in analysis. The flowchart refers to determining if two showers are correlated and determining if a shower is correlated with the start of a track. A schematic which diagrams how these determinations are made is shown in Figure \ref{algosinglee_cartoon_fig}. A list of configurable parameters and their chosen cut values can be found in Table \ref{algosinglee_table}. A more detailed description of Figure \ref{algosinglee_flowchart_fig} is given in the following paragraphs.\\
 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=150mm]{Figures/algosinglee_flowchart.png}\\
-\caption{\textit{A flowchart depicting decisions the algorithm makes for each primary, non-cosmic shower. If the algorithm gets to the bottom of the flowchart, that shower was determined to be from a $\nu_e^{CC}$ interaction, and a $\nu_e$ particle is created.}}
+\caption{\textit{A flowchart depicting decisions the algorithm makes for each primary, non-cosmic shower. If the algorithm gets to the bottom of the flowchart, that shower was determined to be from a $\nu_e^{CC}$ interaction, and a $\nu_e$ particle is created. For clarification of what some acronyms mean, see Figure \ref{algosinglee_cartoon_fig}.}}
 \label{algosinglee_flowchart_fig}
 \end{figure}
 
@@ -254,11 +205,11 @@ The purpose of this algorithm is to reconstruct events with $\nu_e^{CC}$ inclusi
 \label{algosinglee_cartoon_fig}
 \end{figure}
 
-For each primary, non-cosmic shower (``shower A''in Figure \ref{algosinglee_cartoon_fig}), this algorithm computes the point of closest approach and impact parameter between the shower's back-projection and to all other tracks, as well as to all other shower back-projections. If the smallest impact parameter (IP) is less than 10 centimeters and the distance between the shower's start point and the point of closest approach is greater than 1 centimeter, the algorithm assumes this shower is a photon and it rejects the shower as a potential $\nu_e^{CC}$ shower, without any dE/dx considerations\footnote{Note that for $\nu_e^{CC}$ interactions and ``perfect reconstruction'', these impact parameters and points of closest approach between the $\nu_e^{CC}$ electron shower and other tracks in the event are incredibly small (sub centimeter). The cut values are chosen to be much larger to simulate estimated automatic track and shower reconstruction resolutions.}. Otherwise, the algorithm continues by using AlgoEMPart's trained likelihood function to determine based on dE/dx alone whether this shower is gamma-like and should therefore be ignored.\\
+For each primary, non-cosmic shower (``shower A''in Figure \ref{algosinglee_cartoon_fig}), this algorithm computes the point of closest approach (POCA) and impact parameter (IP) between the shower's back-projection and to all other tracks, as well as to all other shower back-projections. If the smallest impact parameter is less than 10 centimeters and the distance between the shower's start point and the point of closest approach is greater than 1 centimeter, the algorithm assumes this shower is a photon and it rejects the shower as a potential $\nu_e^{CC}$ shower, without any dE/dx considerations\footnote{Note that for $\nu_e^{CC}$ interactions and ``perfect reconstruction'', these impact parameters and points of closest approach between the $\nu_e^{CC}$ electron shower and other tracks in the event are incredibly small (sub centimeter). The cut values are chosen to be much larger to simulate estimated automatic track and shower reconstruction resolutions.}. Otherwise, the algorithm continues by using AlgoEMPart's trained likelihood function to determine based on dE/dx alone whether this shower is gamma-like and should therefore be ignored.\\
 
 Assuming this potential $\nu_e^{CC}$ shower has so far been found to be electron-like, the algorithm then compares the shower to all other showers in the event that are not marked as cosmic, and are not already reconstructed to be the descendant of another particle. The purpose of this portion of the code is to enforce that the topology of interest includes a \textit{single electron} exiting the neutrino interaction. If any other electron-like showers are nearby that could be potentially correlated, the shower is rejected as a candidate $\nu_e^{CC}$ electron.\\
 
-The candidate shower is then compared to every track in the event that has not been tagged as cosmic to look for correlations between the potential $\nu_e^{CC}$ electron and tracks (Figure \ref{algosinglee_cartoon_fig}). The topology of interest allows for the electron to point back to the \textit{start} of a track, but \textit{not} to the middle or end of a track (as these showers are likely delta rays or Michel electrons). At this point, the code again uses a likelihood from AlgoEMPart to determine if the shower is still electron-like, this time using both the shower's dE/dx \textit{and} the distance between the shower start and the computed P.O.C.A. as a radiation length. This is a more powerful discrimination to determine if the shower remains electron-like. If the shower remains electron-like and is found to be correlated with the start of a track, the track is stored as associated with another final state particle of the $\nu_e^{CC}$ interaction. The energy of this track will later be included in the reconstructed neutrino energy.\\
+The candidate shower is then compared to every track in the event that has not been tagged as cosmic to look for correlations between the potential $\nu_e^{CC}$ electron and tracks (Figure \ref{algosinglee_cartoon_fig}). The topology of interest allows for the electron to point back to the \textit{start} of a track, but \textit{not} to the middle or end of a track (as these showers are likely delta rays or Michel electrons). At this point, the code again uses a likelihood from AlgoEMPart to determine if the shower is still electron-like, this time using both the shower's dE/dx \textit{and} the distance between the shower start and the computed POCA as a radiation length. This is a more powerful discrimination to determine if the shower remains electron-like. If the shower remains electron-like and is found to be correlated with the start of a track, the track is stored as associated with another final state particle of the $\nu_e^{CC}$ interaction. The energy of this track will later be included in the reconstructed neutrino energy.\\
 
 At this point, a $\nu_e^{CC}$ event has been found, and the shower and any associated tracks are stored to be included in the sensitivity analysis.
 
@@ -266,7 +217,7 @@ At this point, a $\nu_e^{CC}$ event has been found, and the shower and any assoc
 The configurable parameters for this algorithm are summarized in the Table \ref{algosinglee_table}. Note that with ``perfect reconstructed'' showers, these distances are always very small (less than 0.1 centimeters), so these values were chosen to introduce some realism into the algorithm by estimating detector resolutions.\\\\
 
 \begin{table}
-\begin{tabular}{ |p{8cm}|p{1.5cm}|  }
+\begin{tabular}{ |p{8 cm}|p{1.5 cm}|  }
  \hline
  \multicolumn{2}{|c|}{AlgoSingleE: Parameters} \\
  \hline
@@ -320,13 +271,13 @@ An additional, more accurate energy estimation, $E_{\text{calo}}$ is calculated 
 \subsection{Background Topologies}\label{LEEbackgroundtopologiessection}
 
 \subsubsection{Intrinsic $\nu_e$}
-The intrinsic $\nu_e^{CCQE}$ background comes from $\nu_e^{CCQE}$ interactions from Booster Neutrino Beam (BNB) electron neutrinos. The topology of these events involve one electron in the final state, with any number of protons exiting the interaction vertex, but no pions or muons exiting the interaction vertex. Neutral particles included in hadronic activity are also ignored as they are invisible from the point of view of a LArTPC. This background is irreducible for a $\nu_e^{CCQE}$ appearance search, and the dominant background in this analysis. These intrinsic $\nu_e$s in the relevant low energy region are mostly from muon decay in the beam line. The flux uncertainty can be constrained by a parallel $\nu_\mu$ analysis, as was done in MiniBooNE. While constraining $\nu_e$ from muon decay in the beam line with a parallel $\nu_\mu$ analysis, constraining $\nu_e$ from kaon decay in the beam line is discussed in the next chapter of this thesis.
+The intrinsic $\nu_e^{CCQE}$ background comes from $\nu_e^{CCQE}$ interactions from Booster Neutrino Beam (BNB) electron neutrinos. The topology of these events involve one electron in the final state, with any number of protons exiting the interaction vertex, but no pions or muons exiting the interaction vertex. Neutral particles included in hadronic activity are also ignored as they are invisible from the point of view of a LArTPC. This background is irreducible for a $\nu_e^{CCQE}$ appearance search, and is the dominant background in this analysis. These intrinsic $\nu_e$ events in the relevant low energy region are mostly from muon decay in the beam-line. The flux uncertainty can be constrained by a parallel $\nu_\mu$ analysis, as was done in MiniBooNE. The intrinsic $\nu_e$ events at higher energies mostly come from $K^+$ decay in the beam-line. While constraining $\nu_e$ from muon decay will be done with a parallel $\nu_\mu$ analysis, constraining $\nu_e$ from kaon decay in the beam line is discussed in the next chapter of this thesis.
 
 \subsubsection{Intrinsic $\nu_\mu$}
-The intrinsic $\nu_\mu$ background comes from $\nu_\mu$CC interactions from BNB muon neutrinos. Despite the enormous ratio of $\nu_\mu$CC events to $\nu_e^{CC}$ events, this is a sub-dominant background in this analysis. Potential sources of mis-identifications (MIDs) must always involve at least one shower, and there should not be a track recognized as a muon exiting the interaction vertex. For this reason, most $\nu_\mu$CC MIDs are from either
+The intrinsic $\nu_\mu$ background comes from $\nu_\mu^{CC}$ interactions from BNB muon neutrinos. Despite the enormous ratio of $\nu_\mu^{CC}$ events to $\nu_e^{CC}$ events, this is a sub-dominant background in this analysis. Potential sources of mis-identifications (MIDs) must always involve at least one shower, and there should not be a track recognized as a muon exiting the interaction vertex. For this reason, most $\nu_\mu^{CC}$ MIDs are from either:
 \begin{enumerate}
 \item $\mu$ decay electrons (either in flight, or at rest when the energy of the electron is in the very high end of the Michel spectrum), or 
-\item $\nu_\mu$CC events with a neutral pion in the final state. 
+\item $\nu_\mu^{CC}$ events with a neutral pion in the final state. 
 \end{enumerate}
 The first MID source is suppressed because the electron points back to the end of the muon track and therefore is generally tagged by event selection algorithms. Additionally, these events are removed if the outgoing track is correctly identified as a muon. However, this background may be more prominent if the muon reconstructed track direction gets flipped (after which, correct identification of the muon track becomes more difficult, and the electron would point back to the \textit{start} of the track). The effect of flipping this track is not included in this analysis, but the impact is expected to be small because there are several handles on track directionality in LArTPCs including from multiple Coulomb scattering and delta rays.\\
 
@@ -347,7 +298,7 @@ This background comes from cosmic rays that pass through the detector. The relat
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/UB_publicplot_3dcosmics.png}\\
-\caption{\textit{A 3D event display showing measured cosmic tracks entering the MicroBooNE detector. The three boxes show the full readout window fo the detector which corresponds to 4.8 $ms$. The red highlighted box shows the physical volume of the TPC. The colored lines are 3D reconstructed cosmic tracks. Data taken in August, 2015.}}
+\caption{\textit{A 3D event display showing measured cosmic tracks entering the MicroBooNE detector. The three boxes show the full readout window of the detector which corresponds to 4.8 $ms$. The red highlighted box shows the physical volume of the TPC. The colored lines are 3D reconstructed cosmic tracks. Data taken in August, 2015.}}
 \label{UB_publicplot_3dcosmics}
 \end{figure}
 
@@ -363,11 +314,11 @@ Cosmic MID topologies include but are not limited to showers that radiate off of
 \end{figure}
 
 
-In addition to these ``in-time'' cosmics (those that triggered a readout and arrived during the beam gate window), an additional cosmic background comes from events in which a \textit{neutrino} interacts inside of the beam gate window, triggering a readout, but an out-of-time cosmic MID gets incorrectly matched to the neutrino flash. These cosmic MIDs are appropriately referred to as ``out-of-time'' cosmics. The ``out-of-time" cosmic background is not included in this analysis, but its size relative to the ``in-time'' cosmics is small.\\
+In addition to these ``in-time'' cosmics (those that triggered a readout and arrived during the beam gate window), an additional cosmic background comes from events in which a \textit{neutrino} interacts inside of the beam gate window, triggering a readout, but an out-of-time cosmic MID topology gets incorrectly matched to the neutrino flash. These cosmic MIDs are appropriately referred to as ``out-of-time'' cosmics. The ``out-of-time" cosmic background is not included in this analysis, but its size relative to the ``in-time'' cosmics is small.\\
 
 \subsection{Background Normalization}\label{LEE_background_normalization_section}
 % Mention the beam induced backgrounds are normalized to POT, the cosmic backgrounds come from the open cosmic sample and are normalized to beam gate open time (which is assuming perfect flash matching).
-As described in Section \ref{LEE_simulated_background_samples_section}, the simulated background samples used in this analysis can be classified either as beam-induced, or cosmic. Each beam-induced background has an associated simulated POT generated, and they are each normalized to $6.6\times10^{20}$ POT, the nominal amount of beam scheduled to be delivered to MicroBooNE over the course of three years running. The cosmic simulated sample does not have an associated POT, but instead has an associated total exposure time. The normalization of this sample must involve disregarding the event selection cut in which a reconstructed optical flash occurs within the timing of the beam gate window. The total beam-gate-open exposure time corresponding to $6.6\times10^{20}$ POT is 211 seconds:
+As described in Section \ref{LEE_simulated_background_samples_section}, the simulated background samples used in this analysis can be classified either as beam-induced, or cosmic. Each beam-induced background has an associated simulated protons-on-target (POT) generated, and they are each normalized to $6.6\times10^{20}$ POT, the nominal amount of beam scheduled to be delivered to MicroBooNE over the course of three years running. The cosmic simulated sample does not have an associated POT, but instead has an associated total exposure time. The normalization of this sample must involve disregarding the event selection cut in which a reconstructed optical flash occurs within the timing of the beam gate window (described in Section \ref{analysis_cut_descript_section}). The total beam-gate-open exposure time corresponding to $6.6\times10^{20}$ POT is 211 seconds:
 \begin{equation}
 \frac{6.6\times10^{20} POT}{5 \times 10^{12} \frac{POT}{spill}} \times 1.6\frac{\mu s}{spill} = 211 \text{ seconds}
 \end{equation}
@@ -386,9 +337,9 @@ The analysis cuts placed are:
 \item If the reconstructed $\nu_e$ interaction has additional particles reconstructed to be in the final state, those particles are limited to protons only (using assumed perfect efficiency to tag a track as a proton). This down-samples the $\nu_e^{CC}$ selected sample to specifically $\nu_e^{CCQE}$.
 \item Minimum primary $\nu_e^{CC}$ reconstructed electron energy deposited of 60 MeV.
 \item A fiducial volume of 10 cm from all sides of the detector is placed on the neutrino interaction vertex.
-\item A projected-backwards-distance-to-wall cut of 40 cm is placed on the primary $\nu_e^{CC}$ reconstructed electron.
+\item A projected-backwards-distance-to-wall cut of 40 cm is placed on the primary $\nu_e^{CC}$ reconstructed electron. The projected-backwards-distance-to-wall cut is computed by back-projecting the reconstructed $\nu_e^{CC}$ electron along its shower axis until it intersects with the TPC boundaries. The distance between the electron start point and the wall intersection point is the distance on which the cut is placed.
 \end{enumerate}
-The projected-backwards-distance-to-wall cut is computed by back-projecting the reconstructed $\nu_e^{CC}$ electron along its shower axis until it intersects with the TPC boundaries. The distance between the electron start point and the wall intersection point is the distance on which the cut is placed.\\
+
 
 %XXX  Mention ``what are the possible uncertainties that could make a significant change in the assumed backgrounds.''
 
@@ -396,21 +347,21 @@ The efficiency of the event selection algorithms with ``perfect reconstruction''
 
 
 \begin{table}
-\begin{tabular}{ |p{4cm}|p{3cm}|p{6cm}|  }
+\begin{tabular}{ |p{4 cm}|p{3 cm}|p{6 cm}|  }
  \hline
  \multicolumn{3}{|c|}{Event Selection Efficiencies} \\
  \hline
  True Event Type & Efficiency & Efficiency Including Analysis Cuts \\
  \hline \hline
- $\nu_e^{CCQE}$ & 0.8209 & 0.6142\\\hline
+ $\nu_e^{CCQE}$ & 82.09\% & 61.42\% \\\hline
  
- $\nu_\mu$CC & 0.0068 & 0.0002\\\hline
+ $\nu_\mu^{CC}$ & 0.68\% & 0.02\% \\\hline
 
- $\nu_x$NC & 0.0086 & 0.0013\\\hline
+ $\nu_x$NC & 0.86\% & 0.13\% \\\hline
 
- B.I.T.E. & 0.0107 & 0.0005 \\\hline
+ B.I.T.E. & 1.07\% & 0.05\% \\\hline
 
- Cosmic & 0.0588 & 0.0012\\\hline
+ Cosmic & 5.88\% & 0.12\% \\\hline
 
  \hline
 \end{tabular}
@@ -419,13 +370,13 @@ The efficiency of the event selection algorithms with ``perfect reconstruction''
 
 
 
-The backgrounds to the $\nu_e^{CCQE}$ appearance search in MicroBooNE are shown in Figure \ref{LEE_stackedbackgrounds_nosignal_withanalysiscuts_fig}, normalized to the nominal MicroBooNE expected POT. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}.
+The backgrounds to the $\nu_e^{CCQE}$ appearance search in MicroBooNE are shown in Figure \ref{LEE_stackedbackgrounds_nosignal_withanalysiscuts_fig}, normalized to the nominal MicroBooNE expected POT, with statistical-only error bars shown. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}.
 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/LEE_stackedbackgrounds_nosignal_withAnalysisCuts.png}\\
-\caption{\textit{The backgrounds to the $\nu_e^{CCQE}$ appearance search in MicroBooNE. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}.}}
+\caption{\textit{The backgrounds to the $\nu_e^{CCQE}$ appearance search in MicroBooNE with statistical-only error bars shown. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}.}}
 \label{LEE_stackedbackgrounds_nosignal_withanalysiscuts_fig}
 \end{figure}
 
@@ -437,9 +388,9 @@ The backgrounds to the $\nu_e^{CCQE}$ appearance search in MicroBooNE are shown 
 % Here is where I describe how I come up with my scaled signal shape and normalization. Simulated sample are intrinsic nues, since I'm assuming the excess is coming from beam nues. Shape comes from MiniBooNE published data (excess events evis distribution and uz distribution along with the CCQE formula). Normalization comes from size of MiniBooNE excess with respect to size of MiniBooNE intrinsic nue background in a specific region (excess should be larger than the intrinsic nue background in the low CCQE-energy region... this was Bill's recent suggestion). This section will probably be several pages long.
 This section describes how the signal sample is generated for this sensitivity study, along with the necessary assumptions made in the process. First, the signal is assumed to originate from beam-induced $\nu_e^{CCQE}$ interactions (this is the electron-like hypothesis for the excess). No study for a photon-like excess is described in this thesis. In this electron-like excess search, the signal sample consists of simulated intrinsic $\nu_e^{CCQE}$ interactions from the BNB generated uniformly throughout the MicroBooNE TPC. The energy and angle of these events are re-weighted to match the published energy and angle distributions of the excess as observed by MiniBooNE. \\
 
-The MiniBooNE public data set \cite{MB_lee_datarelease} provides one dimensional distributions of $u_z$, $E_{vis}$, and $E_\nu^{CCQE}$ for the excess events, where $u_z$ is the z-direction cosine (the z- component of the unit momentum) of the observed particle in the low energy excess sample, $E_{vis}$ is the visible energy associated with the event, and $E_{\nu}^{CCQE}$ is the calculated neutrino energy assuming the interaction was charged current quasi-elastic (see Equation (\ref{MB_CCQE_formula})).\\
+The MiniBooNE public data set \cite{MB_lee_datarelease} provides one dimensional distributions of $u_z$, $E_{vis}$, and $E_\nu^{CCQE}$ for the excess events, where $u_z$ is the z-direction cosine (the z- component of the unit momentum) of the observed particle in the low energy excess sample, $E_{vis}$ is the visible energy associated with the event, and $E_{\nu}^{CCQE}$ is the calculated neutrino energy assuming the interaction was charged current quasi-elastic (see Equation \ref{MB_CCQE_formula}).\\
 
-Given these three one-dimensional distributions, a two-dimensional distribution of $u_z$ vs. $E_{vis}$ is built by using the CCQE formula here that as shown in Equation (\ref{MB_CCQE_formula})\footnote{The careful reader will note that the CCQE energy formula should use lepton energy, $E_e$, but here $E_{vis}$ is used instead. This is assuming that the lepton energy is the same as the visible energy.}. By comparing the MicroBooNE signal sample two-dimensional histogram of $\nu_e^{CCQE}$ electron $u_z$ vs. $E_{vis}$ to this MiniBooNE excess distribution, re-weighting factors are computed to reshape the MicroBooNE signal sample to match the MiniBooNE excess in this parameter space.\\
+Given these three one-dimensional distributions, a two-dimensional distribution of $u_z$ vs. $E_{vis}$ is built by using the CCQE formula\footnote{The careful reader will note that the CCQE energy formula should use lepton energy, $E_e$, but here $E_{vis}$ is used instead. This is assuming that the lepton energy is the same as the visible energy.}. By comparing the MicroBooNE signal sample two-dimensional histogram of $\nu_e^{CCQE}$ electron $u_z$ vs. $E_{vis}$ to this MiniBooNE excess distribution, re-weighting factors are computed to reshape the MicroBooNE signal sample to match the MiniBooNE excess in this parameter space.\\
 
 The strategy to generate the MiniBooNE excess two dimensional distribution is as follows:
 \begin{enumerate}
@@ -461,21 +412,7 @@ The resulting two-dimensional distribution of $u_z$ vs. $E_{vis}$ for the true M
 \caption{\textit{The computed distribution of $u_z$ (how forward-going the event is) vs. $E_{vis}$ for N = 1000 times the MiniBooNE low energy excess (raw) events.}}\label{MBth2dfig}
 \end{figure}
 
-While the shape of the simulated MicroBooNE signal events is determined by the above process, the absolute normalization of this sample is computed by comparing the relative size of the signal with respect to the intrinsic $\nu_e$ backgrounds as observed by MiniBooNE. This is appropriate to do only because of the assumption that the origin of the low energy excess is intrinsic BNB $\nu_e$s. From MiniBooNE data and MC, there are 187.7 excess signal events and 148.4 intrinsic $\nu_e$ events in the $E_\nu^{CCQE}$ energy range from 100 to 600 MeV. In this analysis, the number of intrinsic $\nu_e$ events in that $E_\nu^{CCQE}$ energy range in MicroBooNE is computed to be 159.8, and therefore the simulated signal sample is normalized to have 159.8*(187.7/148.4)=201.3 events in that $E_\nu^{CCQE}$ energy range.\\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+While the shape of the simulated MicroBooNE signal events is determined by the above process, the absolute normalization of this sample is computed by comparing the relative size of the signal with respect to the intrinsic $\nu_e$ backgrounds as observed by MiniBooNE. This is appropriate to do only because of the assumption that the origin of the low energy excess is intrinsic BNB $\nu_e$. From MiniBooNE data and MC, there are 187.7 excess signal events and 148.4 intrinsic $\nu_e$ events in the $E_\nu^{CCQE}$ energy range from 100 to 600 MeV. In this analysis, the number of intrinsic $\nu_e$ events in that $E_\nu^{CCQE}$ energy range in MicroBooNE is computed to be 159.8, and therefore the simulated signal sample is normalized to have 159.8*(187.7/148.4)=201.3 events in that $E_\nu^{CCQE}$ energy range.\\
 
 
 
@@ -485,7 +422,7 @@ While the shape of the simulated MicroBooNE signal events is determined by the a
 
 \subsection{Sensitivity Results}
 
-Shown in Figure \ref{LEE_perfectreco_fullstack_fig} is the previously shown stacked backgrounds with the scaled MiniBooNe low energy excess signal included. Also labeled on the plot is the computed significance of 11.57$\sigma$, including only statistical errors. The details on the computation of the significance is described in the next section.
+Shown in Figure \ref{LEE_perfectreco_fullstack_fig} is the previously shown stacked backgrounds, now with the scaled MiniBooNe low energy excess signal included. Also labeled on the plot is the computed significance of 11.57$\sigma$, including only statistical errors. The details on the computation of the significance is described in the next section.
 
 \begin{figure}[ht!]
 \centering
@@ -502,19 +439,6 @@ For a given stacked background plot with a scaled signal on top, the statistical
 \end{equation}
 where $\vec{S}$ is a vector containing the size of the signal, with length equal to the number of bins in the histogram, $n$, and $E$ is the $n\times n$ statistical-only covariance matrix (diagonal matrix with entries equal to the summed number of background events per bin).
 
-
-\subsubsection{Results with Realistic Shower Reconstruction Efficiency}
-So far in this analysis, the shower reconstruction efficiency has been 100\% because the input objects are ``perfect reconstruction''. In order to emulate a more realistic potential shower reconstruction efficiency, an additional study has been done in which the shower reconstruction efficiency is modeled in an energy dependent way, with a maximum of 85\% efficiency for showers with energy included in this analysis (above 60 MeV deposited). The value of 85\% was chosen because this is approximately the maximum shower efficiency published by the ICARUS collaboration \cite{ICARUS_showereff_source}. The resulting stacked background histogram with modeled signal is shown in Figure \ref{LEE_recoemu_fullstack_fig}. The computed (statistical only) significance when realistic shower reconstruction efficiencies are included in the analysis is 10.10$\sigma$.
-
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=0.9\textwidth]{Figures/LEE_recoemu_fullstack_WithAnalysisCuts.png}\\
-\caption{\textit{The backgrounds to the $\nu_e^{CCQE}$ appearance search in MicroBooNE with scaled signal drawn. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}. The scaled signal is described in Section \ref{MBLEESignalModeling_section}. Here the shower reconstrution efficiency has been decreased from the ``perfect reconstruction'' value of 100\% to 85\% to emulate possible realistic shower reconstruction efficiencies.}}
-\label{LEE_recoemu_fullstack_fig}
-\end{figure}
-
-Note that in comparing Figure \ref{LEE_perfectreco_fullstack_fig} to Figure \ref{LEE_recoemu_fullstack_fig}, not all sample sizes are simply reduced by 15\%. For example, the intrinsic NC backgrounds actually increase when the shower reconstruction efficiency is decreased. This is because these backgrounds arise primarily from $\pi^0$ decays, and they are mitigated by event selection algorithms that locate both subsequent photon showers pointing back to a common origin and correlate them together. With reduced shower reconstruction efficiency, sometimes only one of the $\pi^0$ decay showers gets reconstructed and subsequently gets misidentified as a candidate $\nu_e^{CC}$ electron.
 
 \subsubsection{Systematic Error Estimates}
 
@@ -539,11 +463,26 @@ and $E_{\text{xsec}}$ is similarly diagonal:
 E_{\text{xsec}}^{i,i} = (N_{\text{beam-induced}}^i*0.20)^2
 \end{equation}
 
-With these systematic uncertainties included in the significance calculation, with realistic shower reconstruction efficiencies included the significance is reduced from 10.10$\sigma$ (statistical only) to 6.52$\sigma$. Note that assuming these systematics are uncorrelated is very conservative. A complete summary of MicroBooNE's computed significance to the MiniBooNE low energy excess assuming an electron-like signal hypothesis for ``perfect reconstructed'' objects, ``perfect reconstructed objects'' with simulated realistic shower reconstruction efficiency, with and without conservative systematic uncertainties can be found in Table \ref{LEE_final_significance_table}.
 
+\subsubsection{Realistic Shower Reconstruction Efficiency}
+So far in this analysis, the shower reconstruction efficiency has been 100\% because the input objects are ``perfect reconstruction''. In order to emulate a more realistic potential shower reconstruction efficiency, an additional study has been done in which the shower reconstruction efficiency is modeled in an energy dependent way, with a maximum of 85\% efficiency for showers with energy included in this analysis (above 60 MeV deposited). The value of 85\% was chosen because this is approximately the maximum shower efficiency published by the ICARUS collaboration \cite{ICARUS_showereff_source}. The resulting stacked background histogram with modeled signal is shown in Figure \ref{LEE_recoemu_fullstack_fig}. The computed (statistical only) significance when realistic shower reconstruction efficiencies are included in the analysis is 10.10$\sigma$.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/LEE_recoemu_fullstack_WithAnalysisCuts.png}\\
+\caption{\textit{The backgrounds to the $\nu_e^{CCQE}$ appearance search in MicroBooNE with scaled signal drawn. The event selection is described in Section \ref{LEE_eventselection_section}, the background topologies described in Section \ref{LEEbackgroundtopologiessection}, the relative normalization between samples described in Section \ref{LEE_background_normalization_section}, and the energy reconstruction described in Section \ref{LEE_EnergyReco_section}. The scaled signal is described in Section \ref{MBLEESignalModeling_section}. Here the shower reconstrution efficiency has been decreased from the ``perfect reconstruction'' value of 100\% to 85\% to emulate possible realistic shower reconstruction efficiencies.}}
+\label{LEE_recoemu_fullstack_fig}
+\end{figure}
+
+Note that in comparing Figure \ref{LEE_perfectreco_fullstack_fig} to Figure \ref{LEE_recoemu_fullstack_fig}, not all sample sizes are simply reduced by 15\%. For example, the intrinsic NC backgrounds actually increase when the shower reconstruction efficiency is decreased. This is because these backgrounds arise primarily from $\pi^0$ decays, and they are mitigated by event selection algorithms that locate both subsequent photon showers pointing back to a common origin and correlate them together. With reduced shower reconstruction efficiency, sometimes only one of the $\pi^0$ decay showers gets reconstructed and subsequently gets misidentified as a candidate $\nu_e^{CC}$ electron.
+
+
+\subsubsection{Final Results}
+
+A complete summary of MicroBooNE's computed significance to the MiniBooNE low energy excess assuming an electron-like signal hypothesis for ``perfect reconstructed'' objects, ``perfect reconstructed objects'' with simulated realistic shower reconstruction efficiency, with and without conservative systematic uncertainties can be found in Table \ref{LEE_final_significance_table}.
 
 \begin{table}
-\begin{tabular}{ |p{5cm}|p{5cm}|p{5cm}|  }
+\begin{tabular}{ |p{5 cm}|p{5 cm}|p{5 cm}|  }
  \hline
  \multicolumn{3}{|c|}{MicroBooNE Sensitivity Significances} \\
  \hline
@@ -559,9 +498,9 @@ With these systematic uncertainties included in the significance calculation, wi
 
 
 \subsubsection{Next Steps}
-The described ``perfect reconstruction'' sensitivity study to an electron-like excess is an important tool for MicroBooNE. The event selection algorithms have been developed with these objects, and are ready to be used out-of-the-box when automated track and shower reconstruction efforts become more fruitful in the future. Additionally, this sensitivity study can be used to set goals for the experiment by smearing or modifying the ``perfect reconstruction'' objects. For example, with this analysis the sensitivity to the low energy excess can be computed as a function of shower reconstruction efficiency to drive the effort to reach 5$\sigma$. Also, the sensitivity as a function of POT delivered has already been used to guide discussions on data blinding, for example to address how much can remain unblinded for reconstruction development without biasing the $\nu_e$ search.\\
+The described ``perfect reconstruction'' sensitivity study to an electron-like excess is an important tool for MicroBooNE. The event selection algorithms have been developed with these objects, and are ready to be used out-of-the-box when automated track and shower reconstruction efforts become more fruitful in the future. Additionally, this sensitivity study can be used to set goals for the experiment by smearing or modifying the ``perfect reconstruction'' objects. For example, with this analysis the sensitivity to the low energy excess can be computed as a function of shower reconstruction efficiency to drive the shower reconstruction effort to reach 5$\sigma$. Also, the sensitivity as a function of POT delivered has already been used to guide discussions on data blinding, for example to address how much can remain unblinded for reconstruction development without biasing the $\nu_e$ search.\\
 
 As mentioned, no photon-like excess search is described in this thesis. It is important to determine a sensitivity to an electron-like excess as well as a photon-like excess, because the true origin of the excess is still unknown. In order to conduct a photon-like excess search, event selection algorithms and analysis cuts would have to be developed to search for single photon events rather than single electron events.\\
 
-An important takeaway from this electron-like excess analysis is that systematics play an important role in the ultimate sensitivity. The flux systematic is particularly large. As shown, the largest background in the MicroBooNE low energy excess search is from intrinsic $\nu_e$s in the beam, which come from either muon decay in the beam-line, or kaon decay in the beam-line. In the low energy region, the majority of intrinsic $\nu_e$s come from muon decay, which is tied to the observed $\nu_\mu$ events, as demonstrated by MiniBooNE. Constraining the remaining $\nu_e$s from kaon decay can be done by observing the high energy $\nu_\mu$ rate, the topic of the next chapter.
+An important takeaway from this electron-like excess analysis is that systematics play an important role in the ultimate sensitivity. The flux systematic is particularly large. As shown, the largest background in the MicroBooNE low energy excess search is from intrinsic $\nu_e$ in the beam, which come from either muon decay in the beam-line, or kaon decay in the beam-line. In the low energy region, the majority of intrinsic $\nu_e$ come from muon decay, which is tied to the observed $\nu_\mu$ events, as demonstrated by MiniBooNE. Constraining the remaining $\nu_e$ from kaon decay can be done by observing the high energy $\nu_\mu$ rate, the topic of the next chapter.
 

@@ -1,3 +1,15 @@
+%HERE'S HOW TO COMPILE AND MAKE THE REFERENCES SHOW UP IN THE CORRECT ORDER
+%DO NOT USE \protect TO INCLUDE CITATIONS IN FIGURE CAPTIONS, AS THIS SCREWS THINGS UP
+%http://tex.stackexchange.com/questions/166174/bibliographystyle-unsrt-not-working
+%
+%Write your bibliography in a separate .bib file using the appropriate BibTeX entry format.
+%Compile filename.tex once (in order to obtain a correct/current .aux).
+%Run bibtex filename (in order to obtain a correct/current .bbl).
+%Compile filename.tex again (in order to include the correct/current .bbl).
+
+
+
+
 @ARTICLE{Grosz_and_Sidner_1986,
   author = {Barbara Grosz and Candace Sidner},
   title = {Attention, intention, and the structure of discourse},
@@ -220,7 +232,7 @@ url = "http://www-boone.fnal.gov/for_physicists/data_release/lowe/"
 @article{JocelynMonroeThesis,
 author = "Jocelyn Monroe",
 title = "A Combined numu and nue Oscillation Search at MiniBooNE",
-collaboration = "MiniBooNE"
+collaboration = "MiniBooNE",
 url = "https://www-boone.fnal.gov/publications/Papers/jrmonroe_thesis.pdf"}
 
 
@@ -445,4 +457,19 @@ volume = "C52:29-53"}
       archivePrefix  = "arXiv",
       primaryClass   = "hep-ex",
       SLACcitation   = "%%CITATION = ARXIV:0801.4589;%%"
+}
+
+
+@article{UBCNNsource,
+      author         = "Acciarri, R. and others",
+      title          = "{Convolutional Neural Networks Applied to Neutrino Events
+                        in a Liquid Argon Time Projection Chamber}",
+      collaboration  = "MicroBooNE",
+      journal        = "Submitted to: JINST",
+      year           = "2016",
+      eprint         = "1611.05531",
+      archivePrefix  = "arXiv",
+      primaryClass   = "physics.ins-det",
+      reportNumber   = "FERMILAB-PUB-16-538-ND",
+      SLACcitation   = "%%CITATION = ARXIV:1611.05531;%%"
 }
