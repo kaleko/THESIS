@@ -2,8 +2,8 @@
 % Ph.D. thesis %
 %%%%%%%%%%%%%%%%
 
-\documentclass[11pt,openright,twoside,letterpaper,onecolumn]{report} %% USE THIS FOR DOUBLE SIDED
-%\documentclass[11pt,openright,oneside,letterpaper,onecolumn]{report}  %% USE THIS FOR SINGLE SIDED
+%\documentclass[11pt,openright,twoside,letterpaper,onecolumn]{report} %% USE THIS FOR DOUBLE SIDED
+\documentclass[11pt,openright,oneside,letterpaper,onecolumn]{report}  %% USE THIS FOR SINGLE SIDED
 
 \input{header}
 
@@ -34,11 +34,14 @@
 \setcounter{tocdepth}{2}
 \renewcommand{\contentsname}{Table of Contents}
 \tableofcontents
-\cleardoublepage
+%\cleardoublepage
+\clearpage
 
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 \cleardoublepage
 
+\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 \cleardoublepage
 
@@ -126,6 +129,15 @@
 \input{conclusions}
 
 %%%
+%%% Bibliography
+%%%
+%\part{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{unsrt} 
+\bibliography{refs}
+
+
+%%%
 %%% Appendices
 %%%
 \part{Appendices}
@@ -133,13 +145,6 @@
 % \input{appendix-PerfectReco} %this is empty, probably won't end up making it an appendix
 \input{appendix-MCSpaper}
 
-%%%
-%%% Bibliography
-%%%
-%\part{Bibliography}
-\addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{unsrt} 
-\bibliography{refs}
 
 
 \end{document}
